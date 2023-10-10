@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body{
+    background-color: #F7E7E2;
+}
+.sidebar{
+    position: absolute;
+z-index: 2;
+    height: 100vh;
+    width: 18em;
+    background-color:#1E1E1E ;
+    color: white;
+   
+}
+.x-image{
+    width: 1.8em;
+    height: 1.6em;
+    margin-right: 10px;
+}
+.x{
+    display: flex;
+    justify-content: end;
+    margin-top: 1.3em;
+}
+.sidebar-option{
+    height: 15em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 12px;
+}
+ a{
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+}
+.three-dot{
+    width: 1.5em;
+    margin-right: 7 px;
+}
+.account-info{
+    margin-top: 18em;
+}
+.upper-account{
+    align-items: center;
+    margin-left: 48px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.lower-account{
+    width: 90%;
+    margin-left: 8px;
+}
+.account-email{
+    font-size: small;
+    margin-left: 40px;
+    opacity: 0.5;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 12vh;
+}
+.menu{
+    height: 2.2em;
+    width: 2.1em;
+    margin-top: 1em;
+    margin-left: 2em;
+}
+.top-red{
+    margin-left: 14px;
+    width: 41%;
+    background-color: red;
+}
+.cart{
+    margin-top: 1em;
+    margin-right: 2em;
+}
+.middle-red{
+    margin: auto;
+    width: 28%;
+    height: 30vh;
+    background-color: red;
+}
+h1{
+    position: absolute;
+    font-weight: 400;
+    font-size: 18vw;
+    
+
+}
