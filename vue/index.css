@@ -14,7 +14,7 @@ z-index: 2;
     width: 18em;
     background-color:#1E1E1E ;
     color: white;
-   visibility: hidden;
+visibility: hidden;
 }
 .x-image{
     width: 1.8em;
@@ -64,7 +64,7 @@ z-index: 2;
 nav{
     display: flex;
     justify-content: space-between;
-    height: 12vh;
+    height: 10vw;
 }
 .menu{
     height: 2.2em;
@@ -75,6 +75,7 @@ nav{
 .top-red{
     margin-left: 14px;
     width: 41%;
+    height: 10vw;
     background-color: red;
 }
 .cart{
@@ -84,13 +85,14 @@ nav{
 .middle-red{
     margin: auto;
     width: 28%;
-    height: 30vh;
+    height: 30vw;
     background-color: red;
 }
 h1{
     position: absolute;
     font-weight: 400;
-    font-size: 18vw;
+    font-size: 12vw;
+    left: 2.3em;
     
 
 }
