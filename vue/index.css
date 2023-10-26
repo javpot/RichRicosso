@@ -5,7 +5,7 @@
     font-family: 'Inter', sans-serif;
 }
 body{
-    background-color: #F7E7E2;
+    background-color: #5B565F;
 }
 .sidebar{
     position: absolute;
@@ -76,7 +76,7 @@ nav{
     margin-left: 14px;
     width: 41%;
     height: 10vw;
-    background-color: red;
+    background-color: #6A7065;
 }
 .cart{
     margin-top: 1em;
@@ -84,9 +84,9 @@ nav{
 }
 .middle-red{
     margin: auto;
-    width: 28%;
+    width: 40em;
     height: 30vw;
-    background-color: red;
+    background-color: #6A7065;
 }
 h1{
     position: absolute;
