@@ -8,19 +8,19 @@ body{
     background-color: #5B565F;
 }
 .main-container{
-    height: 65vh;
+    height: 70vh;
     width: 30em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-left: 8em;
-    margin-top: 8em;
+    margin-top: 6em;
 }
 h2{
     font-size: 3em;
     color: white;
     font-weight: 400;
-    margin-bottom: 0.7em;
+    margin-bottom: 0.5em;
 }
 p{
     font-size: 1.3em;
@@ -29,6 +29,7 @@ p{
 .have-account{
     text-decoration: none;
     color: white;
+   
 }
 form{
 display: flex;
@@ -40,11 +41,11 @@ height: 35em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 6em;
+    height: 4.5em;
 }
 label{
     color: white;
-    font-size: 25px;
+    font-size: 18px;
 }
 input{
     height: 3em;
@@ -53,7 +54,7 @@ input{
 }
 input[type="text"],input[type="email"],input[type="password"]
 {
-    font-size:16px;
+    font-size:14px;
 }
 .input-checkbox{
     display: flex;

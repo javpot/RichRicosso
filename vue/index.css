@@ -9,12 +9,12 @@ body{
 }
 .sidebar{
     position: absolute;
-z-index: 2;
-    height: 100vh;
+    z-index: 2;
+    height: 100%;
     width: 18em;
     background-color:#1E1E1E ;
     color: white;
-visibility: hidden;
+    visibility: hidden;
 }
 .x-image{
     width: 1.8em;
@@ -27,13 +27,17 @@ visibility: hidden;
     margin-top: 1.3em;
 }
 .sidebar-option{
-    height: 15em;
+    height: 22em;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin-left: 12px;
 }
- a{
+ul{
+    list-style-type: none;
+}
+ li a{
+    
     text-decoration: none;
     color: white;
     font-size: 23px;
@@ -43,7 +47,7 @@ visibility: hidden;
     margin-right: 7 px;
 }
 .account-info{
-    margin-top: 18em;
+    margin-top: 23em;
 }
 .upper-account{
     align-items: center;
@@ -64,7 +68,7 @@ visibility: hidden;
 nav{
     display: flex;
     justify-content: space-between;
-    height: 10vw;
+    height: 8vw;
 }
 .menu{
     height: 2.2em;
@@ -75,7 +79,7 @@ nav{
 .top-red{
     margin-left: 14px;
     width: 41%;
-    height: 10vw;
+    
     background-color: #6A7065;
 }
 .cart{
@@ -84,8 +88,8 @@ nav{
 }
 .middle-red{
     margin: auto;
-    width: 40em;
-    height: 30vw;
+    width: 20em;
+    height: 20vw;
     background-color: #6A7065;
 }
 h1{
@@ -93,6 +97,104 @@ h1{
     font-weight: 400;
     font-size: 12vw;
     left: 2.3em;
+    top: 0.2em;
+    z-index: 5;
     
 
 }
+.cravatte{
+    position: absolute;
+    left: 28.5em;
+    
+    bottom: 7em;
+}
+.bottom-red{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+    margin: 20px auto 0px auto;
+    width: 50em;
+    height: 24vw;
+    background-color: #6A7065;
+    
+}
+.text-rr{
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+.end-red{
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 18em;
+   height: 2.8em;
+    background-color: #6A7065;
+    align-items: center;
+}
+.who-am-i{
+    display: flex;
+    justify-content: center;
+    margin: 10vh 0 10vh 0;
+}
+h2{
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+    margin: auto;
+}
+.who-container{
+    display: flex;
+    justify-content: space-between;
+}
+.left-who-container{
+    width: 38%;
+    height: 373px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 30px;
+}
+h3{
+    color: white;
+    font-family: 'Italianno', cursive;
+    font-size: 48px;
+}
+.ricasso-bio{
+    vertical-align: bottom;
+    line-height: 35px;
+    font-size: 22px;
+    height: 60%;
+    color: white;
+}
+.photo-ricasso{
+    height: 350px;
+    margin-right: 30px;
+}
+.container-carousel{
+    padding: 2rem;
+}
+.slider-wrapper{
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+    border-radius: 0.5rem;
+    gap: 1rem; /* Espacement entre les images */
+  }
+  
+  .slider img {
+    flex: 0 0 100%; /* Les images occupent 100% de la largeur visible */
+    scroll-snap-align: start;
+    object-fit: cover;
+    width: auto; /* Assurez-vous que chaque image est de la même largeur que le conteneur */
+    height: auto; /* Ajustez la hauteur automatiquement pour conserver les proportions */
+  }
+  
