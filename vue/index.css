@@ -20,6 +20,7 @@ body{
     width: 1.8em;
     height: 1.6em;
     margin-right: 10px;
+    cursor: pointer;
 }
 .x{
     display: flex;
@@ -75,6 +76,7 @@ nav{
     width: 2.1em;
     margin-top: 1em;
     margin-left: 2em;
+    cursor: pointer;
 }
 .top-red{
     margin-left: 14px;
@@ -104,7 +106,7 @@ h1{
 }
 .cravatte{
     position: absolute;
-    left: 28.5em;
+    left: 39.5em;
     
     bottom: 7em;
 }
@@ -115,7 +117,7 @@ h1{
     text-align: center;
     margin: 20px auto 0px auto;
     width: 50em;
-    height: 24vw;
+    height: 15vw;
     background-color: #6A7065;
     
 }
@@ -171,30 +173,121 @@ h3{
     height: 350px;
     margin-right: 30px;
 }
-.container-carousel{
-    padding: 2rem;
-}
-.slider-wrapper{
-    position: relative;
-    max-width: 48rem;
-    margin: 0 auto;
-}
-.slider {
+.most-popular{
+   display: flex;
+   margin-top: 5em;
+   }
+   .wrapper{
     display: flex;
-    aspect-ratio: 16/9;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    max-width: 1200px;
+    position: relative;
+    justify-content: center;
+    margin: 4em auto;
+  }
+  .wrapper i{
+    top: 50%;
+    height: 44px;
+    width: 44px;
+    color: #343F4F;
+    cursor: pointer;
+    font-size: 1.15rem;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+    
+  }
+  .wrapper i:active{
+    transform: translateY(-50%) scale(0.9);
+  }
+  .wrapper i:hover{
+    background: #f2f2f2;
+  }
+  .wrapper i:first-child{
+    left: -22px;
+    display: none;
+  }
+  .wrapper i:last-child{
+    right: -22px;
+  }
+  .wrapper .carousel{
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
     scroll-behavior: smooth;
-    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
-    border-radius: 0.5rem;
-    gap: 1rem; /* Espacement entre les images */
   }
-  
-  .slider img {
-    flex: 0 0 100%; /* Les images occupent 100% de la largeur visible */
-    scroll-snap-align: start;
+  .carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+  }
+  .carousel.dragging img{
+    pointer-events: none;
+  }
+  .carousel img{
+    height: 340px;
     object-fit: cover;
-    width: auto; /* Assurez-vous que chaque image est de la même largeur que le conteneur */
-    height: auto; /* Ajustez la hauteur automatiquement pour conserver les proportions */
+    user-select: none;
+    margin-left: 14px;
+    width: calc(100% / 3);
+  }
+  .carousel img:first-child{
+    margin-left: 0px;
+  }
+  .end-content{
+    margin-top: 20vh;
+    display: flex;
+    justify-content: space-around;
+  }
+  .call-action{
+    width: 35em;
+    background-color: #c4c4c43b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+  }
+  .text-action{
+    line-height: 2em;
+    font-size: 35px;
+  }
+  .buy{
+    width: 8em;
+    height: 2em;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    font-size: 24px;
+  }
+  .buy:hover{
+    background-color: #6A7065;
+  }
+  .copyright{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    height: 7vh;
+    align-items: center;
+    margin-top: 10vh;
+  }
+  .copyright p{
+    color: white;
+  }
+  .blur-background {
+    filter: blur(5px);
   }
   
+
+  @media screen and (max-width: 900px) {
+    .carousel img{
+      width: calc(100% / 2);
+    }
+  }
+  @media screen and (max-width: 550px) {
+    .carousel img{
+      width: 100%;
+    }
+  }
