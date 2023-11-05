@@ -6,6 +6,12 @@ x = document.getElementById("x");
 const value = document.querySelector("#value");
 const input = document.querySelector("#range-prix");
 value.textContent = input.value;
+filtre = document.getElementById("filtre");
+filtreContainer = document.getElementById("filtre-container");
+xFiltre = document.getElementById("x-text");
+buttonFiltre = document.getElementById("button-filtre");
+cravatteCheck = document.getElementById("cravatte-check"); 
+taille = document.querySelectorAll(".taille");
 
 
 
@@ -26,5 +32,33 @@ const hideSidebar = () => {
     contentContainer.classList.remove("blur-background");
 }
 
+const showFiltre = () => {
+    filtreContainer.style.visibility = "visible";
+    
+}
+const hideFiltre = () => {
+    filtreContainer.style.visibility = "hidden";
+}
+const isCravatteChecked = () => {
+    if (cravatteCheck.checked) {
+        console.log("check");
+        taille.forEach((checkbox) => {
+            checkbox.checked = false
+            checkbox.disabled = true;
+        });
+    } else {
+        taille.forEach((checkbox) => {
+            checkbox.disabled = false;
+        });
+    }
+}
+
+
+
 menu.addEventListener("click", showSidebar);
 x.addEventListener("click", hideSidebar);
+filtre.addEventListener("click",showFiltre);
+xFiltre.addEventListener("click",hideFiltre);
+buttonFiltre.addEventListener("click",hideFiltre);
+cravatteCheck.addEventListener("click",isCravatteChecked);
+

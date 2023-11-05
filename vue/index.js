@@ -4,6 +4,9 @@ arrowIcons = document.querySelectorAll(".wrapper i");
 menu = document.getElementById("menu");
 sidebar = document.getElementById("sidebar");
 x = document.getElementById("x");
+about = document.getElementById("about");
+shop = document.getElementById("shop");
+log = document.getElementById("log");
 
 let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
 
@@ -90,3 +93,6 @@ carousel.addEventListener("touchend", dragStop);
 
 menu.addEventListener("click",showSidebar);
 x.addEventListener("click",hideSidebar);
+about.addEventListener("click",hideSidebar);
+shop.addEventListener("click",hideSidebar);
+log.addEventListener("click",hideSidebar);
