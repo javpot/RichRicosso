@@ -9,7 +9,7 @@ body{
 }
 .sidebar{
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     height: 100%;
     width: 18em;
     background-color:#1E1E1E ;
@@ -66,6 +66,26 @@ ul{
     margin-left: 40px;
     opacity: 0.5;
 }
+.filtre-container{
+    position: absolute;
+    background-color: white;
+    z-index: 2;
+    width: 55vw;
+    height: 35vw;
+    padding: 20px;
+}
+.button-filtre{
+    width: 8em;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    height: 87%;
+    justify-content: space-between;
+}
+.filtre{
+    margin-bottom: 0.5vw;
+}
 nav{
     display: flex;
     justify-content: space-between;
@@ -86,6 +106,16 @@ nav{
 }
 .main-products-container{
     margin-left: 5em;
+}
+.top-container{
+    display: flex;
+    justify-content: space-between;
+    width: 88%;
+}
+.filtre{
+    height: 38px;
+    width: 38px;
+    cursor: pointer;
 }
 .all-products{
     color: white;
@@ -122,3 +152,4 @@ nav{
     gap: 5%
     
 }
+
