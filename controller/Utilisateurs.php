@@ -11,9 +11,9 @@ class UtilisateursController
     {
         return $this->model->getAllUsers();
     }
-    public function getUserById($id)
+    public function getUserByEmail($email)
     {
-        return $this->model->getUserById($id);
+        return $this->model->getUserByEmail($email);
     }
     public function createUser($data)
     {
@@ -23,12 +23,12 @@ class UtilisateursController
         );
         return $this->model->createUser($data);
     }
-    public function updateUser($id, $data)
+    public function updateUser($data)
     {
-        return $this->model->updateUser($id, $data);
+        return $this->model->updateUser($data);
     }
-    public function deleteUser($id)
+    public function deleteUser($email)
     {
-        return $this->model->deleteUser($id);
+        return $this->model->deleteUser($email);
     }
 }
