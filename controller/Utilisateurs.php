@@ -1,5 +1,5 @@
 <?php
-require_once 'model/Utilisateurs.php';
+require_once '../model/Utilisateurs.php';
 class UtilisateursController
 {
     private $model;

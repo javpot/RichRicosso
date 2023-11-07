@@ -10,7 +10,7 @@ filtre = document.getElementById("filtre");
 filtreContainer = document.getElementById("filtre-container");
 xFiltre = document.getElementById("x-text");
 buttonFiltre = document.getElementById("button-filtre");
-cravatteCheck = document.getElementById("cravatte-check"); 
+chemiseCheck = document.getElementById("chemise-check"); 
 taille = document.querySelectorAll(".taille");
 
 
@@ -39,8 +39,8 @@ const showFiltre = () => {
 const hideFiltre = () => {
     filtreContainer.style.visibility = "hidden";
 }
-const isCravatteChecked = () => {
-    if (cravatteCheck.checked) {
+const isChemiseChecked = () => {
+    if (chemiseCheck.checked) {
         console.log("check");
         taille.forEach((checkbox) => {
             checkbox.checked = false
@@ -60,5 +60,5 @@ x.addEventListener("click", hideSidebar);
 filtre.addEventListener("click",showFiltre);
 xFiltre.addEventListener("click",hideFiltre);
 buttonFiltre.addEventListener("click",hideFiltre);
-cravatteCheck.addEventListener("click",isCravatteChecked);
+chemiseCheck.addEventListener("click",isChemiseChecked);
 

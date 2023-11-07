@@ -13,6 +13,7 @@ class UtilisateursModel
     }
     public function getUserByEmail($email)
     {
+
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->execute([$email]);
         return $stmt->fetch();
@@ -38,5 +39,6 @@ email = ? WHERE email = ?");
         $stmt = $this->pdo->prepare("DELETE FROM users WHERE email = ?");
         return $stmt->execute([$email]);
     }
+
     // Ajoutez d'autres fonctions ici
 }

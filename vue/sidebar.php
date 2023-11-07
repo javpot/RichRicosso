@@ -1,15 +1,19 @@
 <?php
 require_once('../controller/Utilisateurs.php');
+require_once('../manager/DBManager.php');
 
-//IL FAUT LE SINGLETON GestionnaireDeBD
+$pdo = DBManager::getInstance();
+$controller = $pdo->getController();
 
-$controller = new UtilisateursController($pdo);
 
-$userId = $_SERVER['USER_ID'];
-$user = $controller->getUserById($_SERVER['USER_ID']);
-echo 'USER ID IS : ' . $userId;
+$userEmail = isset($_SERVER['USER_email']) ? $_SERVER['USER_email'] : null;
+$user = null;
+if ($userEmail !== null) {
+    $user = $controller->getUserByEmail($userEmail);
+    echo 'USER email IS : ' . $userEmail;
+}
 
-if ($userId != null) {
+if ($user != null) {
     echo `
         <div class="sidebar" id="sidebar">
             <div class="x">
@@ -30,6 +34,7 @@ if ($userId != null) {
                 </div>
             </div>
         </div>
+        
         `;
 } else {
     echo `
