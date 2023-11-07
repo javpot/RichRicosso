@@ -7,6 +7,7 @@ x = document.getElementById("x");
 about = document.getElementById("about");
 shop = document.getElementById("shop");
 log = document.getElementById("log");
+threeDot = document.getElementById("three-dot");
 
 let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
 

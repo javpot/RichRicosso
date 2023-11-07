@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="account.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="sidebar" id="sidebar">
+      <div class="x">
+        <img class="x-image" src="img/icons8-x-48.png" alt="X button" id="x" />
+      </div>
+      <ul class="sidebar-option">
+        <li><a href="./products.html" id="shop">Shop</a></li>
+        <li><a href="index.html" id="about">About</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="logIn.html" id="log">Log in</a></li>
+      </ul>
+      <div class="account-info">
+        <div class="upper-account">
+          <p>Marceloti Pako</p>
+          <img
+            class="three-dot"
+            src="img/icons8-3-points-60.png"
+            alt="settings account"
+          />
+        </div>
+        <div class="lower-account">
+          <p class="account-email">marceloti@gmail.com</p>
+        </div>
+      </div>
+    </div>
+    <nav>
+      <img class="menu" src="img/icons8-menu-50.png" alt="menu" id="menu" />
+      <p class="cart">Cart 0</p>
+    </nav>
+    <div class="main-container">
+      <div class="name-email">
+        <h2 class="name">Mathew Young</h2>
+        <p class="full-email">matheyYoung@gmail.com</p>
+      </div>
+      <h2 class="personal">Personal</h2>
+      <hr />
+      <div class="input-container">
+        <div>
+          <p class="title">Full name</p>
+          <input type="text" value="Mathew Young" />
+        </div>
+        <div>
+          <p class="title">Email</p>
+          <input type="email" value="matheyYoung@gmail.com" />
+        </div>
+        <div>
+          <p class="title">Password</p>
+          <input type="password" name="password" id="password" />
+        </div>
+      </div>
+      <div class="container-button">
+        <button class="update">Update</button>
+      </div>
+    </div>
+    <script src="product.js"></script>
+  </body>
+</html>

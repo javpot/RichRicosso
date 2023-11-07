@@ -46,6 +46,7 @@ ul{
 .three-dot{
     width: 1.5em;
     margin-right: 7 px;
+    cursor: pointer;
 }
 .account-info{
     margin-top: 23em;

@@ -17,8 +17,8 @@ class UtilisateursController
     }
     public function createUser($data)
     {
-        $data['mot_de_passe'] = password_hash(
-            $data['mot_de_passe'],
+        $data['passwordUser'] = password_hash(
+            $data['passwordUser'],
             PASSWORD_DEFAULT
         );
         return $this->model->createUser($data);
