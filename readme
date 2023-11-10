@@ -1,0 +1,2 @@
+Lorsque le user est connecter et veux se deconnecter il faudra creer un fichier php logout qui va destroy la session
+ et le redirect sur le fichier log in.php

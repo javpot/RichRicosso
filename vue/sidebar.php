@@ -23,7 +23,8 @@ if ($user != null) {
             <ul class="sidebar-option">
                 <li><a href="./products.html">Shop</a></li>
                 <li><a href="">About</a></li>
-                <li><a href="">Log in</a></li>
+                <li><a href="">Cart</a></li>
+                <li><a href="./logIn.html">Log out</a></li>
             </ul>
             <div class="account-info">
                 <div class="upper-account">
@@ -44,6 +45,7 @@ if ($user != null) {
             <ul class="sidebar-option">
                 <li><a href="./products.html">Shop</a></li>
                 <li><a href="">About</a></li>
+                <li><a href="">Cart</a></li>
                 <li><a href="">Log in</a></li>
             </ul>
         </div>';
