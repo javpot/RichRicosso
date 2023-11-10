@@ -1,5 +1,3 @@
-<?php
-$myHtml = <<<HTML
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +18,10 @@ $myHtml = <<<HTML
 </head>
 
 <body>
-  <?php include 'sidebar.php'; ?>
+  <?php
+  require_once('sidebar.php');
+  echo $message;
+  ?>
   <div class="content-container">
     <nav>
       <img class="menu" src="img/icons8-menu-50.png" alt="menu" id="menu" />
@@ -28,7 +29,7 @@ $myHtml = <<<HTML
       <p class="cart">Cart 0</p>
     </nav>
     <div>
-      <div class ="middle-red">
+      <div class="middle-red">
         <h1>Ricasso</h1>
       </div>
     </div>
@@ -91,7 +92,3 @@ $myHtml = <<<HTML
 </body>
 
 </html>
-HTML;
-
-echo $myHtml;
-?>

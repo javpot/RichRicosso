@@ -4,6 +4,7 @@ require_once('../manager/DBManager.php');
 
 $pdo = DBManager::getInstance();
 $controller = $pdo->getController();
+$message = "allo";
 
 
 $userEmail = isset($_SERVER['USER_email']) ? $_SERVER['USER_email'] : null;
@@ -14,7 +15,7 @@ if ($userEmail !== null) {
 }
 
 if ($user != null) {
-    echo `
+    $message = '
         <div class="sidebar" id="sidebar">
             <div class="x">
                 <img class="x-image" src="img/icons8-x-48.png" alt="X button" id="x" />
@@ -33,11 +34,9 @@ if ($user != null) {
                     <p class="account-email">marceloti@gmail.com</p>
                 </div>
             </div>
-        </div>
-        
-        `;
+        </div>';
 } else {
-    echo `
+    $message = '
         <div class="sidebar" id="sidebar">
             <div class="x">
                 <img class="x-image" src="img/icons8-x-48.png" alt="X button" id="x" />
@@ -47,7 +46,7 @@ if ($user != null) {
                 <li><a href="">About</a></li>
                 <li><a href="">Log in</a></li>
             </ul>
-        </div>
-        `;
+        </div>';
 }
+
 ?>

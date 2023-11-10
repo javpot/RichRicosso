@@ -105,12 +105,13 @@ h1{
     
 
 }
-.cravatte{
-    position: absolute;
-    left: 39.5em;
-    
-    bottom: 7em;
+.cravatte {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
+
 .bottom-red{
     display: flex;
     flex-direction: column;
