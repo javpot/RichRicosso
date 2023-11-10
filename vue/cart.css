@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+body{
+    background-color: #5B565F;
+}
+.sidebar{
+    position: absolute;
+    z-index: 2;
+    height: 100%;
+    width: 18em;
+    background-color:#1E1E1E ;
+    color: white;
+    visibility: hidden;
+}
+.x-image{
+    width: 1.8em;
+    height: 1.6em;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.x{
+    display: flex;
+    justify-content: end;
+    margin-top: 1.3em;
+}
+.sidebar-option{
+    height: 22em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 12px;
+}
+ul{
+    list-style-type: none;
+}
+ li a{
+    
+    text-decoration: none;
+    color: white;
+    font-size: 23px;
+}
+.three-dot{
+    width: 1.5em;
+    margin-right: 7 px;
+    cursor: pointer;
+}
+.account-info{
+    margin-top: 23em;
+}
+.upper-account{
+    align-items: center;
+    margin-left: 48px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+.lower-account{
+    width: 90%;
+    margin-left: 8px;
+}
+.account-email{
+    font-size: small;
+    margin-left: 40px;
+    opacity: 0.5;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    height: 8vw;
+}
+.menu{
+    height: 2.2em;
+    width: 2.1em;
+    margin-top: 1em;
+    margin-left: 2em;
+    cursor: pointer;
+}
+
+.cart{
+    margin-top: 1em;
+    margin-right: 2em;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+}
+.container-card{
+    width: 30em;
+    height: 60vh;
+    overflow: auto;
+    text-align: justify;
+    margin: auto;
+   
+    
+}
+.card{
+    background-color: #5a5f5693;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 7px;
+    height: 7em;
+    margin-bottom: 2em;
+}
+.card:last-child{
+    margin-bottom: 0;
+}
+.product-img{
+    width: 6.8em;
+}
+.info-product{
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.title-product{
+    align-self: flex-start;
+}
+.bottom-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.garbage{
+    cursor: pointer;
+}
+
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #ababab #5b565f;
+  }
+
+  
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #5b565f;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ababab;
+    border-radius: 10px;
+    border: 3px solid #5b565f;
+  }

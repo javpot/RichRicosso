@@ -23,7 +23,7 @@ if ($user != null) {
             <ul class="sidebar-option">
                 <li><a href="./products.html">Shop</a></li>
                 <li><a href="">About</a></li>
-                <li><a href="">Cart</a></li>
+                <li><a href="cart.php">Cart</a></li>
                 <li><a href="./logIn.html">Log out</a></li>
             </ul>
             <div class="account-info">
