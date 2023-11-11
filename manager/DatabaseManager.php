@@ -8,7 +8,7 @@ class DBManager
 
     private function __construct()
     {
-        $this->conn = new PDO('mysql:host=localhost;dbname=ricassodb', 'root');
+        $this->conn = new PDO('mysql:host=localhost;dbname=ricassodb', 'test');
         $this->controller = new UtilisateursController($this->getConnection());
     }
 

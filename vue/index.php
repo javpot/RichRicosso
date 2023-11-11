@@ -1,3 +1,33 @@
+<?php
+
+require_once("../manager/SessionManager.php");
+require_once("../manager/DatabaseManager.php");
+require_once("../controller/Utilisateurs.php");
+
+$session = SessionManager::getInstance();
+$db = DBManager::getInstance();
+$userController = $db->getController();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_POST["login"])) {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    if ($session->login($email, $password) == false) {
+      header("Location: ../vue/logIn.php");
+    }
+    header("Location: ../vue/index.php");
+  } else if (isset($_POST["signUp"])) {
+    $fullName = $_POST["fullName"];
+    $email = $_POST["email"];
+    $password = $_POST["password"];
+
+    $userController->createUser($fullName, $email, $password);
+    header("Location: ../vue/logIn.html");
+  }
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +49,7 @@
 
 <body>
   <?php
-  require_once('sidebar.php');
+  require('sidebar.php');
   echo $message;
   ?>
   <div class="content-container">
@@ -33,7 +63,7 @@
         <h1>Ricasso</h1>
       </div>
     </div>
-
+    
     <img class="cravatte" src="img/cravatteRR.png" alt="" />
     <div class="bottom-red">
       <p class="text-rr">

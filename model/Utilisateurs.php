@@ -13,25 +13,22 @@ class UtilisateursModel
     }
     public function getUserByEmail($email)
     {
-
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->execute([$email]);
         return $stmt->fetch();
     }
-    public function createUser($data)
+    public function createUser($fullname, $email, $password)
     {
-        $stmt = $this->pdo->prepare("INSERT INTO users (fullName, email, passwordUser, infolettreSub) VALUES (?, ?, ?, ?)");
+        $stmt = $this->pdo->prepare("INSERT INTO users (fullName, email, passwordUser) VALUES (?, ?, ?)");
         return $stmt->execute([
-            $data['fullName'],
-            $data['email'],
-            $data['passwordUser'],
-            $data['infolettreSub']
+            $fullname,
+            $email,
+            $password
         ]);
     }
     public function updateUser($data)
     {
-        $stmt = $this->pdo->prepare("UPDATE users SET fullName = ?,
-email = ? WHERE email = ?");
+        $stmt = $this->pdo->prepare("UPDATE users SET fullName = ?, email = ? WHERE email = ?");
         return $stmt->execute([$data['fullName'], $data['email'], $data['email']]);
     }
     public function deleteUser($email)
@@ -39,6 +36,4 @@ email = ? WHERE email = ?");
         $stmt = $this->pdo->prepare("DELETE FROM users WHERE email = ?");
         return $stmt->execute([$email]);
     }
-
-    // Ajoutez d'autres fonctions ici
 }

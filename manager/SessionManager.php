@@ -1,5 +1,4 @@
 <?php
-
 class SessionManager
 {
     private static $instance = null;
@@ -13,6 +12,7 @@ class SessionManager
     public static function getInstance()
     {
         if (!self::$instance) {
+            session_start();
             self::$instance = new SessionManager();
         }
 
@@ -23,32 +23,20 @@ class SessionManager
     {
         $user = $this->controller->getUserByEmail($email);
         if ($user) {
-            if (password_verify($password, $user['password'])) {
+            if (password_verify($password, $user['passwordUser'])) {
                 return true;
             }
         }
         return false;
     }
-    public function grantAdminAccess($email, $password)
-    {
-        if ($this->verifyUser($email, $password)) {
-            $user = $this->controller->getUserByEmail($email);
-            session_start();
-            if ($user['role'] == 'admin') {
-                $_SESSION['admin']['isAuth'] = true;
-                $_SESSION['admin']['role'] = 'admin';
-            } else {
-                $_SESSION['admin']['isAuth'] = false;
-            }
-        }
-    }
 
     public function login($email, $password)
     {
         if ($this->verifyUser($email, $password)) {
-            $_SESSION['authentifie'] = true;
-            $this->grantAdminAccess($email, $password);
+            $_SESSION['USER_email'] = $email;
+            return true;
         }
+        return false;
     }
 
     public function end()

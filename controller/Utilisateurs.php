@@ -15,13 +15,13 @@ class UtilisateursController
     {
         return $this->model->getUserByEmail($email);
     }
-    public function createUser($data)
+    public function createUser($fullname, $email, $password)
     {
-        $data['passwordUser'] = password_hash(
-            $data['passwordUser'],
+        $password = password_hash(
+            $password,
             PASSWORD_DEFAULT
         );
-        return $this->model->createUser($data);
+        return $this->model->createUser($fullname, $email, $password);
     }
     public function updateUser($data)
     {
