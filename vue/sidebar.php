@@ -19,8 +19,8 @@ if ($user != null) {
                 <img class="x-image" src="img/icons8-x-48.png" alt="X button" id="x" />
             </div>
             <ul class="sidebar-option">
-                <li><a href="./products.html">Shop</a></li>
-                <li><a href="/vue">About</a></li>
+                <li><a href="./products.php">Shop</a></li>
+                <li><a href="./index.php">About</a></li>
                 <li><a href="cart.php">Cart</a></li>
                 <li><a href="./logIn.html">Log out</a></li>
             </ul>
@@ -41,8 +41,8 @@ if ($user != null) {
                 <img class="x-image" src="img/icons8-x-48.png" alt="X button" id="x" />
             </div>
             <ul class="sidebar-option">
-                <li><a href="./products.html">Shop</a></li>
-                <li><a href="/vue">About</a></li>
+                <li><a href="./products.php">Shop</a></li>
+                <li><a href="./index.php">About</a></li>
                 <li><a href="cart.php">Cart</a></li>
                 <li><a href="./logIn.html">Log in</a></li>
             </ul>
