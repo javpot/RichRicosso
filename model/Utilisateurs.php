@@ -28,8 +28,8 @@ class UtilisateursModel
     }
     public function updateUser($data)
     {
-        $stmt = $this->pdo->prepare("UPDATE users SET fullName = ?, email = ? WHERE email = ?");
-        return $stmt->execute([$data['fullName'], $data['email'], $data['email']]);
+        $stmt = $this->pdo->prepare("UPDATE users SET fullName = ?, email = ?, passwordUser = ? WHERE email = ?");
+        return $stmt->execute([$data['fullName'], $data['email'], $data['password'], $data['email']]);
     }
     public function deleteUser($email)
     {

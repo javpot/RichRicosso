@@ -43,6 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $session->addToCart($productId);
 
     header("Location: ../vue/products.php");
+  } else if (isset($_POST["updateAccount"])) {
+    $arr = array("email" => $_POST["email"], "fullName" => $_POST["fullName"], "password" => $_POST["password"]);
+    $db->getControllerUser()->updateUser($arr);
   }
 }
 
@@ -97,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="end-red">
       <p style="color: white">$299</p>
-      <p>Add to cart</p>
+      <a href="product.php?id=8">View product</a>
     </div>
     <div class="who-am-i">
       <h2>Who I am ?</h2>
@@ -119,13 +122,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="wrapper">
       <i id="left" class="fa-solid fa-angle-left"></i>
-      <div class="carousel">
-        <img src="img/shirt1.png" alt="" draggable="false" />
-        <img src="img/cravate2.png" alt="" draggable="false" />
-        <img src="img/shirt2.png" alt="" draggable="false" />
-        <img src="img/cravate4.png" alt="" draggable="false" />
-        <img src="img/shirt4.png" alt="" draggable="false" />
-      </div>
+        <div class="carousel">
+          <?php
+            $allProducts = $db->getControllerProduct()->getAllProducts();
+
+            shuffle($allProducts);
+
+            foreach ($allProducts as $product) {
+          ?>
+              <a href="product.php?id=<?php echo $product['id']; ?>">
+                <img src="../<?php echo $product['image']; ?>" alt="product" draggable="false" />
+              </a>
+          <?php
+            }
+          ?>
+        </div>
+
       <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
     <div class="end-content">
@@ -134,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="text-action">
           Ricasso: Elevate Your Style, One Knot at a Time.
         </p>
-        <a href="products.html"> <button class="buy">Buy</button></a>
+        <a href="products.php"> <button class="buy">View products</button></a>
       </div>
     </div>
     <div class="copyright">

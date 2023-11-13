@@ -39,25 +39,54 @@ class ProduitsModel
         return $stmt->fetchAll();
     }
 
-    // NO NEED
+    public function getFilteredProducts($type, $couleur, $taille, $prixRange)
+    {
+        $sql = "SELECT * FROM clothes WHERE ";
 
-    public function createUser($fullname, $email, $password)
-    {
-        $stmt = $this->pdo->prepare("INSERT INTO users (fullName, email, passwordUser) VALUES (?, ?, ?)");
-        return $stmt->execute([
-            $fullname,
-            $email,
-            $password
-        ]);
-    }
-    public function updateUser($data)
-    {
-        $stmt = $this->pdo->prepare("UPDATE users SET fullName = ?, email = ? WHERE email = ?");
-        return $stmt->execute([$data['fullName'], $data['email'], $data['email']]);
-    }
-    public function deleteUser($email)
-    {
-        $stmt = $this->pdo->prepare("DELETE FROM users WHERE email = ?");
-        return $stmt->execute([$email]);
+        $conditions = [];
+
+        if (!empty($type)) {
+            $conditions[] = "type LIKE :type";
+        }
+
+        if (!empty($couleur)) {
+            $conditions[] = "couleur LIKE :couleur";
+        }
+
+        if (!empty($taille)) {
+            $conditions[] = "size = :taille";
+        }
+
+        if (!empty($prixRange)) {
+            $conditions[] = "prix <= :prixRange";
+        }
+
+        if (empty($conditions)) {
+            return [];
+        }
+
+        $sql .= implode(" AND ", $conditions);
+
+        $stmt = $this->pdo->prepare($sql);
+
+        if (!empty($type)) {
+            $stmt->bindValue(':type', $type, PDO::PARAM_STR);
+        }
+
+        if (!empty($couleur)) {
+            $stmt->bindValue(':couleur', $couleur, PDO::PARAM_STR);
+        }
+
+        if (!empty($taille)) {
+            $stmt->bindValue(':taille', $taille, PDO::PARAM_STR);
+        }
+
+        if (!empty($prixRange)) {
+            $stmt->bindValue(':prixRange', $prixRange, PDO::PARAM_INT);
+        }
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
     }
 }
