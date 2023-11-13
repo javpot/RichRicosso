@@ -71,6 +71,12 @@ nav {
     justify-content: space-between;
     height: 8vw;
 }
+.view-product{
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  cursor: pointer;
+}
 .menu {
     height: 2.2em;
     width: 2.1em;
