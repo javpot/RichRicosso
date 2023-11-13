@@ -47,6 +47,7 @@ class ProduitsModel
 
         if (!empty($type)) {
             $conditions[] = "type LIKE :type";
+            $type = "%" . $type . "%";
         }
 
         if (!empty($couleur)) {
