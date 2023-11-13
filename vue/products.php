@@ -12,14 +12,14 @@ $db = DBManager::getInstance();
 $produitsController = $db->getControllerProduct();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['filters'])) {
-    $typeFilter = isset($_POST['type']) ? $_POST['type'] : null;
-    $couleurFilter = isset($_POST['couleur']) ? $_POST['couleur'] : null;
-    $tailleFilter = isset($_POST['taille']) ? $_POST['taille'] : null;
-    $prixRangeFilter = isset($_POST['range-prix']) ? $_POST['range-prix'] : null;
+  $typeFilter = isset($_POST['type']) ? $_POST['type'] : null;
+  $couleurFilter = isset($_POST['couleur']) ? $_POST['couleur'] : null;
+  $tailleFilter = isset($_POST['taille']) ? $_POST['taille'] : null;
+  $prixRangeFilter = isset($_POST['range-prix']) ? $_POST['range-prix'] : null;
 
-    $allProducts = $produitsController->getFilteredProducts($typeFilter, $couleurFilter, $tailleFilter, $prixRangeFilter);
+  $allProducts = $produitsController->getFilteredProducts($typeFilter, $couleurFilter, $tailleFilter, $prixRangeFilter);
 } else {
-    $allProducts = $produitsController->getAllProducts();
+  $allProducts = $produitsController->getAllProducts();
 }
 ?>
 
@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['filters'])) {
           Submit
         </button>
       </form>
-      </div>
+    </div>
     <nav>
       <img class="menu" src="img/icons8-menu-50.png" alt="menu" id="menu" />
       <p class="cart">
@@ -109,9 +109,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['filters'])) {
       <div class="container-products">
         <?php foreach ($allProducts as $product): ?>
           <div class="product-card">
-          <a href="product.php?id=<?php echo $product['id']; ?>">
-            <img class="product-image" src="../<?php echo $product['image']; ?>" alt="" />
-          </a>
+            <a href="product.php?id=<?php echo $product['id']; ?>">
+              <img class="product-image" src="../<?php echo $product['image']; ?>" alt="" />
+            </a>
             <p class="product-name">
               <?php echo $product['nom']; ?>
             </p>

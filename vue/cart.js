@@ -9,17 +9,16 @@ const showSidebar = () => {
     sidebar.style.visibility = "visible";
     const contentContainer = document.querySelector(".content-container");
     contentContainer.classList.add("blur-background");
-  }
-  
-  const hideSidebar = () => {
+};
+
+const hideSidebar = () => {
     sidebar.style.visibility = "hidden";
     const contentContainer = document.querySelector(".content-container");
     contentContainer.classList.remove("blur-background");
-  }
+};
 
-
-menu.addEventListener("click",showSidebar);
-x.addEventListener("click",hideSidebar);
-about.addEventListener("click",hideSidebar);
-shop.addEventListener("click",hideSidebar);
-log.addEventListener("click",hideSidebar);
+menu.addEventListener("click", showSidebar);
+x.addEventListener("click", hideSidebar);
+about.addEventListener("click", hideSidebar);
+shop.addEventListener("click", hideSidebar);
+log.addEventListener("click", hideSidebar);

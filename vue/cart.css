@@ -1,78 +1,77 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
-body{
-    background-color: #5B565F;
+body {
+    background-color: #5b565f;
 }
-.sidebar{
+.sidebar {
     position: absolute;
     z-index: 2;
     height: 100%;
     width: 18em;
-    background-color:#1E1E1E ;
+    background-color: #1e1e1e;
     color: white;
     visibility: hidden;
 }
-.x-image{
+.x-image {
     width: 1.8em;
     height: 1.6em;
     margin-right: 10px;
     cursor: pointer;
 }
-.x{
+.x {
     display: flex;
     justify-content: end;
     margin-top: 1.3em;
 }
-.sidebar-option{
+.sidebar-option {
     height: 22em;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     margin-left: 12px;
 }
-ul{
+ul {
     list-style-type: none;
 }
- li a{
-    
+li a {
     text-decoration: none;
     color: white;
     font-size: 23px;
 }
-.three-dot{
+.three-dot {
     width: 1.5em;
     margin-right: 7 px;
     cursor: pointer;
 }
-.account-info{
+.account-info {
     margin-top: 23em;
 }
-.upper-account{
+.upper-account {
     align-items: center;
     margin-left: 48px;
     width: 80%;
     display: flex;
     justify-content: space-between;
 }
-.lower-account{
+.lower-account {
     width: 90%;
     margin-left: 8px;
 }
-.account-email{
+.account-email {
     font-size: small;
     margin-left: 40px;
     opacity: 0.5;
 }
-nav{
+nav {
     display: flex;
     justify-content: space-between;
     height: 8vw;
 }
-.menu{
+.menu {
     height: 2.2em;
     width: 2.1em;
     margin-top: 1em;
@@ -80,25 +79,23 @@ nav{
     cursor: pointer;
 }
 
-.cart{
+.cart {
     margin-top: 1em;
     margin-right: 2em;
 }
-h2{
+h2 {
     display: flex;
     justify-content: center;
     margin-bottom: 2em;
 }
-.container-card{
+.container-card {
     width: 30em;
     height: 60vh;
     overflow: auto;
     text-align: justify;
     margin: auto;
-   
-    
 }
-.card{
+.card {
     background-color: #5a5f5693;
     display: flex;
     justify-content: space-evenly;
@@ -106,48 +103,47 @@ h2{
     height: 7em;
     margin-bottom: 2em;
 }
-.card:last-child{
+.card:last-child {
     margin-bottom: 0;
 }
-.product-img{
+.product-img {
     width: 6.8em;
 }
-.info-product{
+.info-product {
     width: 68%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-.title-product{
+.title-product {
     align-self: flex-start;
 }
-.bottom-info{
+.bottom-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.garbage{
+.garbage {
     cursor: pointer;
     background-color: transparent;
     border: none;
 }
 
-  * {
+* {
     scrollbar-width: auto;
     scrollbar-color: #ababab #5b565f;
-  }
+}
 
-  
-  *::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 16px;
-  }
+}
 
-  *::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: #5b565f;
-  }
+}
 
-  *::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background-color: #ababab;
     border-radius: 10px;
     border: 3px solid #5b565f;
-  }
+}

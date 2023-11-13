@@ -39,7 +39,7 @@ class SessionManager
         return false;
     }
 
-    public function addToCart($id) 
+    public function addToCart($id)
     {
         if (!isset($_SESSION['Cart'])) {
             $_SESSION['Cart'] = array();
@@ -48,7 +48,7 @@ class SessionManager
         array_push($_SESSION['Cart'], $id);
     }
 
-    public function removeFromCart($id) 
+    public function removeFromCart($id)
     {
         if (isset($_SESSION['Cart']) && !empty($_SESSION['Cart'])) {
             $index = array_search($id, $_SESSION['Cart']);

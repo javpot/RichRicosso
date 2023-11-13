@@ -122,21 +122,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="wrapper">
       <i id="left" class="fa-solid fa-angle-left"></i>
-        <div class="carousel">
-          <?php
-            $allProducts = $db->getControllerProduct()->getAllProducts();
+      <div class="carousel">
+        <?php
+        $allProducts = $db->getControllerProduct()->getAllProducts();
 
-            shuffle($allProducts);
+        shuffle($allProducts);
 
-            foreach ($allProducts as $product) {
+        foreach ($allProducts as $product) {
           ?>
-              <a href="product.php?id=<?php echo $product['id']; ?>">
-                <img src="../<?php echo $product['image']; ?>" alt="product" draggable="false" />
-              </a>
+          <a href="product.php?id=<?php echo $product['id']; ?>">
+            <img src="../<?php echo $product['image']; ?>" alt="product" draggable="false" />
+          </a>
           <?php
-            }
-          ?>
-        </div>
+        }
+        ?>
+      </div>
 
       <i id="right" class="fa-solid fa-angle-right"></i>
     </div>

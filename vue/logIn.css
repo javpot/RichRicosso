@@ -1,13 +1,13 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
 }
-body{
-    background-color: #5B565F;
+body {
+    background-color: #5b565f;
 }
-.main-container{
+.main-container {
     height: 65vh;
     width: 30em;
     display: flex;
@@ -16,69 +16,68 @@ body{
     margin-left: 8em;
     margin-top: 8em;
 }
-h2{
+h2 {
     font-size: 3em;
     color: white;
     font-weight: 400;
     margin-bottom: 0.7em;
 }
-p{
+p {
     font-size: 1.3em;
-
 }
-.have-account{
+.have-account {
     text-decoration: none;
     color: white;
 }
-form{
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
-height: 30em;
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 30em;
 }
-.input-container{
+.input-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 6em;
 }
-label{
+label {
     color: white;
     font-size: 25px;
 }
-input{
+input {
     height: 3em;
     width: 20em;
     border-radius: 4px;
 }
-input[type="text"],input[type="email"],input[type="password"]
-{
-    font-size:16px;
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    font-size: 16px;
 }
-.input-checkbox{
+.input-checkbox {
     display: flex;
     align-items: center;
     height: 3em;
     justify-content: space-between;
     margin-top: 15px;
 }
-.checkbox{
+.checkbox {
     width: 2.5em;
     padding: 0;
 }
-.news{
+.news {
     margin-right: 20px;
     font-size: 20px;
 }
-button{
+button {
     width: 15em;
     height: 4em;
     padding: 10px;
-    background: #6A7065;
+    background: #6a7065;
     border: none;
     border-radius: 3px;
     font-size: medium;
     font-weight: bold;
     margin: auto;
-
 }
