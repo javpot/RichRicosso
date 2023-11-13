@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
 
-    <img class="cravatte" src="img/cravateRR.png" alt="" />
+    <img class="cravatte" src="img/cravateRR1.png" alt="" />
     <div class="bottom-red">
       <p class="text-rr">
         La cravate en soie noire unie est ornée d’une rayure brodée et d’un

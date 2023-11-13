@@ -110,6 +110,7 @@ $allProducts = $produitsController->getAllProducts();
             </form>
           </div>
         <?php endforeach; ?>
+
       </div>
     </div>
   </div>
