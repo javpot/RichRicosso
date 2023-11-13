@@ -125,8 +125,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="carousel">
         <?php
         $allProducts = $db->getControllerProduct()->getAllProducts();
-
         shuffle($allProducts);
+        $allProducts = array_slice($allProducts, 0, 4);
 
         foreach ($allProducts as $product) {
           ?>
