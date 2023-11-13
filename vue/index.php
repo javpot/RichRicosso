@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div class="end-red">
       <p style="color: white">$299</p>
-      <a href="product.php?id=8">View product</a>
+      <a class="view-product" href="product.php?id=8">View product</a>
     </div>
     <div class="who-am-i">
       <h2>Who I am ?</h2>
