@@ -46,9 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['filters'])) {
         <div class="type">
           <p>Type:</p>
           <label for="cravatte-check">Cravatte</label>
-          <input type="checkbox" name="type" id="cravatte-check" value="Cravatte" />
+          <input type="radio" name="type" id="cravatte-check" value="Cravatte" />
           <label for="chemise-check">Chemise</label>
-          <input type="checkbox" name="type" id="chemise-check" value="Chemise" />
+          <input type="radio" name="type" id="chemise-check" value="Chemise" />
         </div>
         <div class="couleur">
           <p>Couleur:</p>
