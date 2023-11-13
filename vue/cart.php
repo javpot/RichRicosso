@@ -34,7 +34,11 @@ $produitsController = DBManager::getInstance()->getControllerProduct();
         <nav>
             <img class="menu" src="img/icons8-menu-50.png" alt="menu" id="menu" />
 
-            <p class="cart">Cart 0</p>
+            <p class="cart">
+                <?php
+                echo "Cart " . count($_SESSION['Cart']);
+                ?>
+            </p>
         </nav>
         <h2>
             Summary

@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($session->login($email, $password) == false) {
       header("Location: ../vue/logIn.php");
+
     }
 
     header("Location: ../vue/index.php");
@@ -74,7 +75,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <nav>
       <img class="menu" src="img/icons8-menu-50.png" alt="menu" id="menu" />
       <div class="top-red"></div>
-      <p class="cart">Cart 0</p>
+      <p class="cart">
+        <?php
+        echo "Cart " . count($_SESSION['Cart']);
+        ?>
+      </p>
     </nav>
     <div>
       <div class="middle-red">

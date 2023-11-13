@@ -1,2 +1,6 @@
-Lorsque le user est connecter et veux se deconnecter il faudra creer un fichier php logout qui va destroy la session
- et le redirect sur le fichier log in.php
+update account pas fait
+
+ le log in quand il ne marche pas renvoi sur index
+
+ ne pas permettre de rajouter dans cart si le user n'est pas connecter
+

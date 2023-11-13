@@ -82,28 +82,36 @@ $allProducts = $produitsController->getAllProducts();
     </div>
     <nav>
       <img class="menu" src="img/icons8-menu-50.png" alt="menu" id="menu" />
-      <p class="cart">Cart 0</p>
+      <p class="cart">
+        <?php
+        echo "Cart " . count($_SESSION['Cart']);
+        ?>
+      </p>
     </nav>
     <div class="main-products-container">
-            <div class="top-container">
-                <h2 class="all-products">All Products</h2>
-                <img class="filtre" id="filtre" src="img/icons8-filtre-50.png" alt="" />
-            </div>
-            <div class="container-products">
-                <?php foreach ($allProducts as $product): ?>
-                    <div class="product-card">
-                        <img class="product-image" src="../<?php echo $product['image']; ?>" alt="" />
-                        <p class="product-name"><?php echo $product['nom']; ?></p>
-                        <p class="price">$<?php echo $product['prix']; ?></p>
-                        <form method="post" action="index.php">
-                            <input type="hidden" name="addToCart">
-                            <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
-                            <button type="submit" class="add-to-cart" name="add_to_cart">Add to Cart</button>
-                        </form>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
+      <div class="top-container">
+        <h2 class="all-products">All Products</h2>
+        <img class="filtre" id="filtre" src="img/icons8-filtre-50.png" alt="" />
+      </div>
+      <div class="container-products">
+        <?php foreach ($allProducts as $product): ?>
+          <div class="product-card">
+            <img class="product-image" src="../<?php echo $product['image']; ?>" alt="" />
+            <p class="product-name">
+              <?php echo $product['nom']; ?>
+            </p>
+            <p class="price">$
+              <?php echo $product['prix']; ?>
+            </p>
+            <form method="post" action="index.php">
+              <input type="hidden" name="addToCart">
+              <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+              <button type="submit" class="add-to-cart" name="add_to_cart">Add to Cart</button>
+            </form>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
   </div>
   <script src="products.js"></script>
 </body>
