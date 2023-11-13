@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['filters'])) {
           <label for="rose-check">Rose</label>
           <input type="checkbox" name="couleur" id="rose-check" value="Rose" />
           <label for="bleu-check">Bleu</label>
-          <input type="checkbox" name="couleur" id="bleu-check" value="Bleu" />
+          <input type="checkbox" name="couleur" id="bleu-check" value="bleu" />
           <label for="noir-check">Noir</label>
           <input type="checkbox" name="couleur" id="noir-check" value="Noir" />
           <label for="vert-check">Vert</label>

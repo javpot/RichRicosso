@@ -51,6 +51,7 @@ class ProduitsModel
 
         if (!empty($couleur)) {
             $conditions[] = "couleur LIKE :couleur";
+            $couleur = "%" . $couleur ."%";
         }
 
         if (!empty($taille)) {
