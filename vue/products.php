@@ -3,9 +3,6 @@ require_once("../manager/SessionManager.php");
 require_once("../manager/DatabaseManager.php");
 require_once("../controller/Utilisateurs.php");
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 $session = SessionManager::getInstance();
 $db = DBManager::getInstance();
 
