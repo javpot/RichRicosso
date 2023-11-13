@@ -14,6 +14,7 @@ class SessionManager
         if (!self::$instance) {
             session_start();
             self::$instance = new SessionManager();
+            $_SESSION['Cart'] = array();
         }
 
         return self::$instance;
