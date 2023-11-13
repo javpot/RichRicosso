@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p class="text-action">
           Ricasso: Elevate Your Style, One Knot at a Time.
         </p>
-        <a href="products.html"> <button class="buy">Buy</button></a>
+        <a href="products.php"> <button class="buy">Buy</button></a>
       </div>
     </div>
     <div class="copyright">
