@@ -27,4 +27,9 @@ class ProduitsController
     {
         return $this->model->getAllProductsBySize($size);
     }
+
+    public function getFilteredProducts($type, $couleur, $taille, $prixRange)
+    {
+        return $this->model->getFilteredProducts($type, $couleur, $taille, $prixRange);
+    }
 }

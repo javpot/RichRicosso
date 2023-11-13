@@ -25,7 +25,7 @@ if ($user != null) {
             <div class="account-info">
                 <div class="upper-account">
                     <p>' . $user['fullName'] . '</p>
-                    <a href="./account.html"><img class="three-dot" src="img/icons8-3-points-60.png" alt="settings account" /></a>
+                    <a href="./account.php"><img class="three-dot" src="img/icons8-3-points-60.png" alt="settings account" /></a>
                 </div>
                 <div class="lower-account">
                     <p class="account-email">' . $userEmail . '</p>

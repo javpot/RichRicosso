@@ -25,6 +25,10 @@ class UtilisateursController
     }
     public function updateUser($data)
     {
+        $data["password"] = password_hash(
+            $data["password"],
+            PASSWORD_DEFAULT
+        );
         return $this->model->updateUser($data);
     }
     public function deleteUser($email)
