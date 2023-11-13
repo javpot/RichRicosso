@@ -60,6 +60,7 @@ class SessionManager
         session_start();
         session_destroy();
         echo json_encode(["success" => true, "message" => "Déconnecté avec succès"]);
+        
     }
 }
 ?>

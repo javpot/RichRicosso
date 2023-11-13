@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width= , initial-scale=1.0" />
         <title>Rich Ricasso</title>
-        <link rel="stylesheet" href="logIn.css" />
+        <link rel="stylesheet" href="signUp.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -12,30 +12,39 @@
             rel="stylesheet"
         />
     </head>
+
     <body>
         <div class="main-container">
             <div class="sign-login">
-                <h2>Log in</h2>
+                <h2>Sign up</h2>
                 <p>
-                    <a class="have-account" href="signUp.html"
-                        >Dont't have an account?</a
+                    <a class="have-account" href="login.html"
+                        >have an account?</a
                     >
                 </p>
             </div>
 
-            <form action="index.php" method="POST" id="form-logIn">
-                <input type="hidden" name="login" />
+            <form action="index.php" method="POST" id="form-signUp">
+                <input type="hidden" name="newsletter" />
                 <div class="input-container">
                     <label for="email">Email</label>
                     <input type="email" name="email" id="email" />
                 </div>
-                <div class="input-container">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" />
+                <div class="input-checkbox">
+                    <input
+                        type="checkbox"
+                        name="newsLetter"
+                        id="newsLetter"
+                        class="checkbox"
+                        value="newsLetter"
+                    />
+                    <label class="news" for="newsLetter"
+                        >I want to be subscribe to your news letter</label
+                    >
                 </div>
             </form>
 
-            <button type="submit" form="form-logIn">Log in</button>
+            <button type="submit" form="form-signUp">Sign me up to the news letter</button>
         </div>
     </body>
 </html>

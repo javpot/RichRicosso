@@ -6,6 +6,7 @@ require_once("../controller/Utilisateurs.php");
 
 $sessionManager = SessionManager::getInstance();
 $sessionManager->end();
+$sessionManager = SessionManager::getInstance();
 header("Location: ../vue/index.php");
 
 ?>

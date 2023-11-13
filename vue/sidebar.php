@@ -43,7 +43,7 @@ if ($user != null) {
                 <li><a href="./products.php">Shop</a></li>
                 <li><a href="./index.php">About</a></li>
                 <li><a href="cart.php">Cart</a></li>
-                <li><a href="./logIn.html">Log in</a></li>
+                <li><a href="./logIn.php">Log in</a></li>
             </ul>
         </div>';
 }

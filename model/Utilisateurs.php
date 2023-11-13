@@ -36,4 +36,12 @@ class UtilisateursModel
         $stmt = $this->pdo->prepare("DELETE FROM users WHERE email = ?");
         return $stmt->execute([$email]);
     }
+    public function createUserNewsletter($email)
+    {
+        $stmt = $this->pdo->prepare("INSERT INTO users (email, newsLetter) VALUES (?, ?)");
+        return $stmt->execute([
+            $email,
+            1
+        ]);
+    }
 }

@@ -23,6 +23,10 @@ class UtilisateursController
         );
         return $this->model->createUser($fullname, $email, $password);
     }
+    public function createUserNewsletter($email)
+    {
+        return $this->model->createUserNewsletter($email);
+    }
     public function updateUser($data)
     {
         $data["password"] = password_hash(

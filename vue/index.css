@@ -277,12 +277,22 @@ h3 {
     background-color: black;
     display: flex;
     justify-content: center;
+    width: 100%;
     height: 7vh;
     align-items: center;
     margin-top: 10vh;
 }
+.copyright div {
+  display: flex;
+  justify-content: space-between;
+}
 .copyright p {
     color: white;
+    margin-left: 10vh;
+}
+.copyright a {
+  text-decoration: none;
+  color: white;
 }
 .blur-background {
     filter: blur(5px);

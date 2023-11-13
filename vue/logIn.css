@@ -25,6 +25,9 @@ h2 {
 p {
     font-size: 1.3em;
 }
+.error {
+    color: red;
+}
 .have-account {
     text-decoration: none;
     color: white;

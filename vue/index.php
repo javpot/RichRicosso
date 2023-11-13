@@ -8,6 +8,10 @@ $session = SessionManager::getInstance();
 $db = DBManager::getInstance();
 $userController = $db->getControllerUser();
 
+if(!isset($_SESSION['Cart'])) {
+  $_SESSION['Cart'] = array();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (isset($_POST["login"])) {
 
@@ -15,10 +19,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     if ($session->login($email, $password) == false) {
-      header("Location: ../vue/logIn.php");
+      header("Location: ../vue/logIn.php?error=wrongpwd");
+    } else {
+      header("Location: ../vue/index.php");
     }
-
-    header("Location: ../vue/index.php");
 
   } else if (isset($_POST["signUp"])) {
 
@@ -27,7 +31,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
 
     $userController->createUser($fullName, $email, $password);
-    header("Location: ../vue/logIn.html");
+    header("Location: ../vue/logIn.php");
+
+  } else if (isset($_POST["newsletter"])) {
+
+    $email = $_POST["email"];
+
+    if(isset($_POST["newsLetter"])) {
+      $userController->createUserNewsletter($email);
+    } else {
+      print($check);
+    }
 
   } else if (isset($_POST["deleteFromCart"])) {
 
@@ -149,7 +163,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
     <div class="copyright">
-      <p>Copyright © Rich Ricasso</p>
+      <div>
+        <a href="infolettre.php">S'inscrire a l'infolettre</a>
+        <p>Copyright © Rich Ricasso</p>
+      </div>
     </div>
   </div>
   <script src="index.js"></script>
