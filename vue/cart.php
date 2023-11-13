@@ -26,7 +26,7 @@ $produitsController = DBManager::getInstance()->getControllerProduct();
 </head>
 
 <body>
-<?php
+    <?php
     require('sidebar.php');
     echo $message;
     ?>
@@ -47,13 +47,18 @@ $produitsController = DBManager::getInstance()->getControllerProduct();
                 <div class="card">
                     <img class="product-img" src="../<?php echo $product['image']; ?>" alt="">
                     <div class="info-product">
-                        <div class="title-product"><?php echo $product['nom']; ?></div>
+                        <div class="title-product">
+                            <?php echo $product['nom']; ?>
+                        </div>
                         <div class="bottom-info">
-                            <p><?php echo $product['prix']; ?>$ +tx</p>
+                            <p>
+                                <?php echo $product['prix']; ?>$ +tx
+                            </p>
                             <form method="post" action="index.php">
                                 <input type="hidden" name="deleteFromCart">
                                 <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
-                                <button type="submit" class="garbage" name="remove_from_cart">Remove</button>
+                                <button type="submit" class="garbage" name="remove_from_cart"><img src="img/garbage.png"
+                                        alt=""></button>
                             </form>
                         </div>
                     </div>

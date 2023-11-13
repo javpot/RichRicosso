@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     header("Location: ../vue/index.php");
-    
+
   } else if (isset($_POST["signUp"])) {
 
     $fullName = $_POST["fullName"];
@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
 
-    <img class="cravatte" src="img/cravatteRR.png" alt="" />
+    <img class="cravatte" src="img/cravateRR.png" alt="" />
     <div class="bottom-red">
       <p class="text-rr">
         La cravate en soie noire unie est ornée d’une rayure brodée et d’un
@@ -107,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           elegance in the realm of neckwear.
         </p>
       </div>
-      <img class="photo-ricasso" src="img/476254874616837 1.png" alt="image de ricasso" />
+      <img class="photo-ricasso" src="img/ricassoPicture.png" alt="image de ricasso" />
     </div>
     <div class="most-popular">
       <h2>Most popular</h2>
@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
     <div class="end-content">
-      <img src="img/dalcuore_suit_9_s1800x0_q80_noupscale (1).jpg" alt="" />
+      <img src="img/suitBleu.jpg" alt="" />
       <div class="call-action">
         <p class="text-action">
           Ricasso: Elevate Your Style, One Knot at a Time.
