@@ -77,7 +77,11 @@ $productDetails = $db->getControllerProduct()->getProductById($productId);
         <?php endif; ?>
       </div>
       <div class="button-container">
-        <button class="add-to-cart">Add to cart</button>
+        <form action="index.php" method="post">
+          <input type="hidden" name="addToCart">
+          <input type="hidden" name="product_id" value="<?php echo $productDetails['id'] ?>">
+          <button type="submit" class="add-to-cart">Add to cart</button>
+        </form>
       </div>
     </div>
   </div>

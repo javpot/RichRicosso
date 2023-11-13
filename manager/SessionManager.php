@@ -14,7 +14,6 @@ class SessionManager
         if (!self::$instance) {
             session_start();
             self::$instance = new SessionManager();
-            $_SESSION['Cart'] = array();
         }
 
         return self::$instance;
@@ -42,16 +41,12 @@ class SessionManager
 
     public function addToCart($id)
     {
-        if (!isset($_SESSION['Cart'])) {
-            $_SESSION['Cart'] = array();
-        }
-
         array_push($_SESSION['Cart'], $id);
     }
 
     public function removeFromCart($id)
     {
-        if (isset($_SESSION['Cart']) && !empty($_SESSION['Cart'])) {
+        if (!empty($_SESSION['Cart'])) {
             $index = array_search($id, $_SESSION['Cart']);
 
             if ($index !== false) {

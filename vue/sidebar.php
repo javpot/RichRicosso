@@ -1,5 +1,6 @@
 <?php
 
+SessionManager::getInstance();
 $pdo = DBManager::getInstance();
 $controller = $pdo->getControllerUser();
 $message = "allo";

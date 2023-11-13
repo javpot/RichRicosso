@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($session->login($email, $password) == false) {
       header("Location: ../vue/logIn.php");
-
     }
 
     header("Location: ../vue/index.php");
