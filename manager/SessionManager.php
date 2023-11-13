@@ -6,7 +6,7 @@ class SessionManager
 
     private function __construct()
     {
-        $this->controller = DBManager::getInstance()->getController();
+        $this->controller = DBManager::getInstance()->getControllerUser();
     }
 
     public static function getInstance()
@@ -37,6 +37,26 @@ class SessionManager
             return true;
         }
         return false;
+    }
+
+    public function addToCart($id) 
+    {
+        if (!isset($_SESSION['Cart'])) {
+            $_SESSION['Cart'] = array();
+        }
+
+        array_push($_SESSION['Cart'], $id);
+    }
+
+    public function removeFromCart($id) 
+    {
+        if (isset($_SESSION['Cart']) && !empty($_SESSION['Cart'])) {
+            $index = array_search($id, $_SESSION['Cart']);
+
+            if ($index !== false) {
+                unset($_SESSION['Cart'][$index]);
+            }
+        }
     }
 
     public function end()

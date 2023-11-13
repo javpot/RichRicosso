@@ -1,9 +1,7 @@
 <?php
-require_once('../controller/Utilisateurs.php');
-require_once('../manager/DatabaseManager.php');
 
 $pdo = DBManager::getInstance();
-$controller = $pdo->getController();
+$controller = $pdo->getControllerUser();
 $message = "allo";
 
 $userEmail = isset($_SESSION['USER_email']) ? $_SESSION['USER_email'] : null;
@@ -22,7 +20,7 @@ if ($user != null) {
                 <li><a href="./products.php">Shop</a></li>
                 <li><a href="./index.php">About</a></li>
                 <li><a href="cart.php">Cart</a></li>
-                <li><a href="./logIn.html">Log out</a></li>
+                <li><a href="./logOut.php">Log out</a></li>
             </ul>
             <div class="account-info">
                 <div class="upper-account">

@@ -5,8 +5,6 @@ about = document.getElementById("about");
 shop = document.getElementById("shop");
 log = document.getElementById("log");
 
-
-
 const showSidebar = () => {
     sidebar.style.visibility = "visible";
     const contentContainer = document.querySelector(".content-container");
@@ -18,8 +16,6 @@ const showSidebar = () => {
     const contentContainer = document.querySelector(".content-container");
     contentContainer.classList.remove("blur-background");
   }
-  
-
 
 
 menu.addEventListener("click",showSidebar);

@@ -1,5 +1,3 @@
-
-
 menu = document.getElementById("menu");
 sidebar = document.getElementById("sidebar");
 x = document.getElementById("x");
@@ -12,8 +10,6 @@ xFiltre = document.getElementById("x-text");
 buttonFiltre = document.getElementById("button-filtre");
 chemiseCheck = document.getElementById("chemise-check"); 
 taille = document.querySelectorAll(".taille");
-
-
 
 
 input.addEventListener("input", (event) => {
@@ -53,12 +49,9 @@ const isChemiseChecked = () => {
     }
 }
 
-
-
 menu.addEventListener("click", showSidebar);
 x.addEventListener("click", hideSidebar);
 filtre.addEventListener("click",showFiltre);
 xFiltre.addEventListener("click",hideFiltre);
 buttonFiltre.addEventListener("click",hideFiltre);
 chemiseCheck.addEventListener("click",isChemiseChecked);
-

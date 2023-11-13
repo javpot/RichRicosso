@@ -2,6 +2,13 @@
 require_once("../manager/SessionManager.php");
 require_once("../manager/DatabaseManager.php");
 require_once("../controller/Utilisateurs.php");
+
+$session = SessionManager::getInstance();
+$db = DBManager::getInstance();
+
+$produitsController = $db->getControllerProduct();
+
+$allProducts = $produitsController->getAllProducts();
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +17,7 @@ require_once("../controller/Utilisateurs.php");
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>products</title>
+  <title>Products</title>
   <link rel="stylesheet" href="products.css" />
 </head>
 
@@ -78,53 +85,25 @@ require_once("../controller/Utilisateurs.php");
       <p class="cart">Cart 0</p>
     </nav>
     <div class="main-products-container">
-      <div class="top-container">
-        <h2 class="all-products">All Products</h2>
-        <img class="filtre" id="filtre" src="img/icons8-filtre-50.png" alt="" />
-      </div>
-      <div class="container-products">
-        <div class="product-card">
-          <img class="product-image" src="img/shirt1.png" alt="" />
-          <p class="product-name">Cravatte Ratto</p>
-          <p class="price">$89</p>
+            <div class="top-container">
+                <h2 class="all-products">All Products</h2>
+                <img class="filtre" id="filtre" src="img/icons8-filtre-50.png" alt="" />
+            </div>
+            <div class="container-products">
+                <?php foreach ($allProducts as $product): ?>
+                    <div class="product-card">
+                        <img class="product-image" src="../<?php echo $product['image']; ?>" alt="" />
+                        <p class="product-name"><?php echo $product['nom']; ?></p>
+                        <p class="price">$<?php echo $product['prix']; ?></p>
+                        <form method="post" action="index.php">
+                            <input type="hidden" name="addToCart">
+                            <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>">
+                            <button type="submit" class="add-to-cart" name="add_to_cart">Add to Cart</button>
+                        </form>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
-        <div class="product-card">
-          <img class="product-image" src="img/shirt2.png" alt="" />
-          <p class="product-name">Cravatte Ratto</p>
-          <p class="price">$89</p>
-        </div>
-        <div class="product-card">
-          <img class="product-image" src="img/shirt3.png" alt="" />
-          <p class="product-name">Cravatte Ratto</p>
-          <p class="price">$89</p>
-        </div>
-        <div class="product-card">
-          <img class="product-image" src="img/shirt4.png" alt="" />
-          <p class="product-name">Cravatte Ratto</p>
-          <p class="price">$89</p>
-        </div>
-        <div class="product-card">
-          <img class="product-image" src="img/cravate1.png" alt="" />
-          <p class="product-name">Cravatte Ratto</p>
-          <p class="price">$89</p>
-        </div>
-        <div class="product-card">
-          <img class="product-image" src="img/cravate4.png" alt="" />
-          <p class="product-name">Cravatte Ratto</p>
-          <p class="price">$89</p>
-        </div>
-        <div class="product-card">
-          <img class="product-image" src="img/cravate2.png" alt="" />
-          <p class="product-name">Cravatte Ratto</p>
-          <p class="price">$89</p>
-        </div>
-        <div class="product-card">
-          <img class="product-image" src="img/cravate3.png" alt="" />
-          <p class="product-name">Cravatte Ratto</p>
-          <p class="price">$89</p>
-        </div>
-      </div>
-    </div>
   </div>
   <script src="products.js"></script>
 </body>
