@@ -1,4 +1,5 @@
 <?php
+
 class SessionManager
 {
     private static $instance = null;
@@ -55,12 +56,13 @@ class SessionManager
         }
     }
 
+
     public function end()
     {
         session_start();
         session_destroy();
         echo json_encode(["success" => true, "message" => "Déconnecté avec succès"]);
-        
+
     }
 }
 ?>

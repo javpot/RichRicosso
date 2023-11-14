@@ -15,6 +15,16 @@ class ProduitsController
     {
         return $this->model->getProductById($id);
     }
+    public function calculateCart()
+    {
+        return $this->model->calculateCart();
+    }
+
+    public function getPriceProduct($id)
+    {
+        return $this->model->getPriceProduct($id);
+    }
+
     public function getProductsByColor($color)
     {
         return $this->model->getProductsByColor($color);

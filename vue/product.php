@@ -45,7 +45,11 @@ $productDetails = $db->getControllerProduct()->getProductById($productId);
   </div>
   <div>
     <div class="product-img-container">
-      <img class="product" src="../<?php echo $productDetails['image'] ?>" alt="clothes" />
+      <img class="product" src="../<?php echo $productDetails['image'] ?>" alt="clothes" id="image-product" />
+    </div>
+    <div class="container-dot">
+      <div class="dot1" id="dot1"></div>
+      <div class="dot2" id="dot2"></div>
     </div>
     <div class="container-h2">
       <h2>
@@ -65,15 +69,7 @@ $productDetails = $db->getControllerProduct()->getProductById($productId);
           </label>
         <?php elseif (empty($productDetails['size'])): ?>
           <label for="sizeCravatte">Size of your tie:</label>
-          <input
-            id="sizeCravatte"
-            type="number"
-            name="sizeCravatte"
-            value="42"
-            min="42"
-            max="54"
-            step="2"
-          />
+          <input id="sizeCravatte" type="number" name="sizeCravatte" value="42" min="42" max="54" step="2" />
         <?php endif; ?>
       </div>
       <div class="button-container">

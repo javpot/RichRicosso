@@ -8,7 +8,7 @@ $session = SessionManager::getInstance();
 $db = DBManager::getInstance();
 $userController = $db->getControllerUser();
 
-if(!isset($_SESSION['Cart'])) {
+if (!isset($_SESSION['Cart'])) {
   $_SESSION['Cart'] = array();
 }
 
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = $_POST["email"];
 
-    if(isset($_POST["newsLetter"])) {
+    if (isset($_POST["newsLetter"])) {
       $userController->createUserNewsletter($email);
     } else {
       print($check);
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </div>
 
-    <img class="cravatte" src="img/cravateRR1.png" alt="" />
+    <img class="cravatte" src="img/cravateRR2.png" alt="" />
     <div class="bottom-red">
       <p class="text-rr">
         La cravate en soie noire unie est ornée d’une rayure brodée et d’un

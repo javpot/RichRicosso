@@ -42,6 +42,26 @@ li a {
     color: white;
     font-size: 23px;
 }
+.container-dot{
+    display: flex;
+    width: 3em;
+    margin: 12px auto;
+    justify-content: space-between;
+}
+.dot1{
+    background-color: #404040;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.dot2{
+    background-color: #6f6f6f;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 .three-dot {
     width: 1.5em;
     margin-right: 7 px;

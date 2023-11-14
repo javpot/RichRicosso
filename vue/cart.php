@@ -3,6 +3,7 @@ require_once("../manager/SessionManager.php");
 require_once("../manager/DatabaseManager.php");
 require_once("../controller/Utilisateurs.php");
 
+
 $session = SessionManager::getInstance();
 $db = DBManager::getInstance();
 
@@ -69,6 +70,24 @@ $produitsController = DBManager::getInstance()->getControllerProduct();
                 </div>
             <?php endforeach; ?>
         </div>
+        <form action="checkout.php" method="post">
+            <p class="name">
+                <?php echo $user['fullName'] . " Cart" ?>
+            </p>
+            <p class="price">
+                <?php
+                $totalPrice = 0;
+                foreach ($_SESSION['Cart'] as $productId) {
+                    $productPrice = $produitsController->getPriceProduct($productId);
+                    $totalPrice += $productPrice;
+
+                }
+                echo $totalPrice;
+
+                ?>
+            </p>
+            <button class="checkout">Checkout</button>
+        </form>
     </div>
     <script src="cart.js"></script>
 </body>

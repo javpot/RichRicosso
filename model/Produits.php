@@ -18,6 +18,27 @@ class ProduitsModel
         return $stmt->fetch();
     }
 
+    public function getPriceProduct($id)
+    {
+        $stmt = $this->pdo->prepare("SELECT prix FROM clothes WHERE id = ?");
+        $stmt->execute([$id]);
+        $price = $stmt->fetchColumn();
+        return $price;
+    }
+
+    public function calculateCart()
+    {
+        if (!empty($_SESSION['Cart'])) {
+            $somme = 0;
+            foreach ($_SESSION['Cart'] as $productId) {
+                $price = $this->getPriceProduct($productId);
+                $somme += $price;
+            }
+            return $somme;
+        }
+        return "marche pas";
+    }
+
     public function getProductsByColor($color)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM clothes WHERE couleur LIKE ?");
