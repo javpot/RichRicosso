@@ -76,6 +76,17 @@ ul{
     font-weight: bold;
     cursor: pointer;
 }
+.add-to-cart{
+width: 10em;
+height: 2em;
+margin: 10px auto;
+border: none;
+transition: ease 0.5s;
+cursor: pointer;
+}
+.add-to-cart:hover{
+    background-color: #6a7065;
+}
 .blur-background {
     filter: blur(5px);
 }

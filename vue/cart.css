@@ -88,6 +88,9 @@ h2 {
     justify-content: center;
     margin-bottom: 2em;
 }
+.content-container{
+    height: 100%;
+}
 .container-card {
     width: 30em;
     height: 60vh;
@@ -131,6 +134,7 @@ h2 {
 form{
     display: flex;
     justify-content: center;
+    margin-top: 3em;
 }
 .checkout {
     width: 5em;
@@ -141,6 +145,7 @@ form{
     transition: 0.5s ease;
     font-size: 20px;
     padding: 3px;
+    
 }
 .checkout:hover {
     background-color: #6a7065;

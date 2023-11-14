@@ -106,9 +106,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <img class="cravatte" src="img/cravateRR2.png" alt="" />
     <div class="bottom-red">
       <p class="text-rr">
-        La cravate en soie noire unie est ornée d’une rayure brodée et d’un
-        détail RR sur le devant. Le détail emblématique apporte une texture
-        visuelle à la soie, tout en rendant hommage au fondateur de la Maison
+        The solid black silk tie is adorned with an embroidered stripe and an RR detail on the front. The iconic detail
+        adds a visual texture to the silk while paying tribute to the founder of the House
       </p>
     </div>
     <div class="end-red">
