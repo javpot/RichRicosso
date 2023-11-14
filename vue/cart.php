@@ -70,23 +70,25 @@ $produitsController = DBManager::getInstance()->getControllerProduct();
                 </div>
             <?php endforeach; ?>
         </div>
-        <form action="checkout.php" method="post">
-            <p class="name">
-                <?php echo $user['fullName'] . " Cart" ?>
-            </p>
-            <p class="price">
-                <?php
-                $totalPrice = 0;
-                foreach ($_SESSION['Cart'] as $productId) {
-                    $productPrice = $produitsController->getPriceProduct($productId);
-                    $totalPrice += $productPrice;
+        <form action="../checkout.php" method="post">
+            <input type="hidden" name="name" id="" value="<?php echo $user['fullName'] . " Cart"; ?>">
 
-                }
-                echo $totalPrice;
 
-                ?>
-            </p>
-            <button class="checkout">Checkout</button>
+
+            <input type="hidden" name="price" id="" value="<?php
+            $totalPrice = 0;
+            foreach ($_SESSION['Cart'] as $productId) {
+                $productPrice = $produitsController->getPriceProduct($productId);
+                $totalPrice += $productPrice;
+
+            }
+            $totalPrice = ceil($totalPrice * 1.15) * 100;
+            echo $totalPrice;
+
+
+            ?>">
+            </input>
+            <button type="submit" class="checkout">Checkout</button>
         </form>
     </div>
     <script src="cart.js"></script>
