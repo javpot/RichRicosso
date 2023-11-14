@@ -38,10 +38,9 @@ class UtilisateursModel
     }
     public function createUserNewsletter($email)
     {
-        $stmt = $this->pdo->prepare("INSERT INTO users (email, newsLetter) VALUES (?, ?)");
+        $stmt = $this->pdo->prepare("INSERT INTO infolettre (email) VALUES (?)");
         return $stmt->execute([
-            $email,
-            1
+            $email
         ]);
     }
 }

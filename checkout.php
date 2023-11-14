@@ -13,7 +13,7 @@ $checkout_session = \Stripe\Checkout\Session::create([
         [
             'price_data' => [
                 'currency' => 'cad',
-                'product_data' => ['name' => $name, 'description' => 'Nous ne vous promettons pas que vous allez recevoir vos articles, a vos risques et perils.'],
+                'product_data' => ['name' => $name, 'description' => 'Nous ne vous promettons pas que vous allez recevoir vos articles, a vos risques et perils.', 'images' => ["https://i.postimg.cc/CMRp309s/7467bd695b1349d8abdcd70fd878b0a7.png"]],
                 'unit_amount' => $price,
 
 

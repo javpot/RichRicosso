@@ -68,7 +68,7 @@ $productDetails = $db->getControllerProduct()->getProductById($productId);
             <?php echo $productDetails['size'] ?>
           </label>
         <?php elseif (empty($productDetails['size'])): ?>
-          <label for="sizeCravatte">Size of your tie:</label>
+          <label for="sizeCravatte">Size: </label>
           <input id="sizeCravatte" type="number" name="sizeCravatte" value="42" min="42" max="54" step="2" />
         <?php endif; ?>
       </div>

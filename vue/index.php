@@ -37,10 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = $_POST["email"];
 
-    if (isset($_POST["newsLetter"])) {
+    if (isset($_POST["news"])) {
       $userController->createUserNewsletter($email);
-    } else {
-      print($check);
     }
 
   } else if (isset($_POST["deleteFromCart"])) {

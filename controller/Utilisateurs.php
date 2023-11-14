@@ -17,11 +17,15 @@ class UtilisateursController
     }
     public function createUser($fullname, $email, $password)
     {
-        $password = password_hash(
-            $password,
-            PASSWORD_DEFAULT
-        );
-        return $this->model->createUser($fullname, $email, $password);
+        if (empty($fullname) or empty($email) or empty($password)) {
+            return null;
+        } else {
+            $password = password_hash(
+                $password,
+                PASSWORD_DEFAULT
+            );
+            return $this->model->createUser($fullname, $email, $password);
+        }
     }
     public function createUserNewsletter($email)
     {

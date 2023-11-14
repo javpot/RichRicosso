@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['filters'])) {
           <input type="checkbox" name="couleur" id="vert-check" value="Vert" />
         </div>
         <div class="taille">
-          <p>Taille de chemise:</p>
+          <p>Taille de cravatte:</p>
           <label for="taille-44">44</label>
           <input class="taille" type="checkbox" name="taille" id="taille-44" value="44" />
           <label for="taille-46">46</label>
