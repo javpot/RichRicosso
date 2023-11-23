@@ -1,4 +1,5 @@
 <?php
+echo 5;
 require_once '../model/Produits.php';
 class ProduitsController
 {

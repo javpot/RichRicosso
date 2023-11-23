@@ -1,4 +1,5 @@
 <?php
+echo "3";
 class UtilisateursModel
 {
     private $pdo;
@@ -11,6 +12,7 @@ class UtilisateursModel
         $stmt = $this->pdo->query("SELECT * FROM users");
         return $stmt->fetchAll();
     }
+
     public function getUserByEmail($email)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");

@@ -1,5 +1,6 @@
 <?php
-require_once '../model/Utilisateurs.php';
+echo "2";
+require_once './model/Utilisateurs.php';
 class UtilisateursController
 {
     private $model;
@@ -9,11 +10,11 @@ class UtilisateursController
     }
     public function getAllUsers()
     {
-        return $this->model->getAllUsers();
+        return json_encode($this->model->getAllUsers());
     }
     public function getUserByEmail($email)
     {
-        return $this->model->getUserByEmail($email);
+        return json_encode($this->model->getUserByEmail($email));
     }
     public function createUser($fullname, $email, $password)
     {
@@ -24,12 +25,12 @@ class UtilisateursController
                 $password,
                 PASSWORD_DEFAULT
             );
-            return $this->model->createUser($fullname, $email, $password);
+            return json_encode($this->model->createUser($fullname, $email, $password));
         }
     }
     public function createUserNewsletter($email)
     {
-        return $this->model->createUserNewsletter($email);
+        return json_encode($this->model->createUserNewsletter($email));
     }
     public function updateUser($data)
     {
@@ -37,10 +38,10 @@ class UtilisateursController
             $data["password"],
             PASSWORD_DEFAULT
         );
-        return $this->model->updateUser($data);
+        return json_encode($this->model->updateUser($data));
     }
     public function deleteUser($email)
     {
-        return $this->model->deleteUser($email);
+        return json_encode($this->model->deleteUser($email));
     }
 }

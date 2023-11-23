@@ -78,6 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="img/cover (1).png" />
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 
 <body>
@@ -85,84 +86,87 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   require('sidebar.php');
   echo $message;
   ?>
-  <div class="content-container">
-    <nav>
-      <img class="menu" src="img/icons8-menu-50.png" alt="menu" id="menu" />
-      <div class="top-red"></div>
-      <p class="cart">
-        <?php
-        echo "Cart " . count($_SESSION['Cart']);
-        ?>
-      </p>
-    </nav>
-    <div>
-      <div class="middle-red">
-        <h1>Ricasso</h1>
-      </div>
-    </div>
-
-    <img class="cravatte" src="img/cravateRR2.png" alt="" />
-    <div class="bottom-red">
-      <p class="text-rr">
-        The solid black silk tie is adorned with an embroidered stripe and an RR detail on the front. The iconic detail
-        adds a visual texture to the silk while paying tribute to the founder of the House
-      </p>
-    </div>
-    <div class="end-red">
-      <p style="color: white">$299</p>
-      <a class="view-product" href="product.php?id=8">View product</a>
-    </div>
-    <div class="who-am-i">
-      <h2>Who I am ?</h2>
-    </div>
-    <div class="who-container">
-      <div class="left-who-container">
-        <h3>Rich Ricasso</h3>
-        <p class="ricasso-bio" id="ricasso-bio">
-          Rich Ricasso, a luminary in the world of tie design, has left an
-          indelible mark on the fashion industry. With a career spanning
-          decades, he has consistently pushed the boundaries of creativity and
-          elegance in the realm of neckwear.
-        </p>
-      </div>
-      <img class="photo-ricasso" src="img/ricassoPicture.png" alt="image de ricasso" />
-    </div>
-    <div class="most-popular">
-      <h2>Most popular</h2>
-    </div>
-    <div class="wrapper">
-      <i id="left" class="fa-solid fa-angle-left"></i>
-      <div class="carousel">
-        <?php
-        $allProducts = $db->getControllerProduct()->getAllProducts();
-        shuffle($allProducts);
-        $allProducts = array_slice($allProducts, 0, 4);
-
-        foreach ($allProducts as $product) {
-          ?>
-          <a href="product.php?id=<?php echo $product['id']; ?>">
-            <img src="../<?php echo $product['image']; ?>" alt="product" draggable="false" />
-          </a>
+  <div id="app">
+    <div class="content-container">
+      <nav>
+        <img class="menu" src="img/icons8-menu-50.png" alt="menu" id="menu" />
+        <div class="top-red"></div>
+        <p class="cart">
           <?php
-        }
-        ?>
+          echo "Cart " . count($_SESSION['Cart']);
+          ?>
+        </p>
+      </nav>
+      <div>
+        <div class="middle-red">
+          <h1>Ricasso</h1>
+        </div>
       </div>
 
-      <i id="right" class="fa-solid fa-angle-right"></i>
-    </div>
-    <div class="end-content">
-      <img src="img/suitBleu.jpg" alt="" />
-      <div class="call-action">
-        <p class="text-action">
-          Ricasso: Elevate Your Style, One Knot at a Time.
+      <img class="cravatte" src="img/cravateRR2.png" alt="" />
+      <div class="bottom-red">
+        <p class="text-rr">
+          The solid black silk tie is adorned with an embroidered stripe and an RR detail on the front. The iconic
+          detail
+          adds a visual texture to the silk while paying tribute to the founder of the House
         </p>
-        <a href="products.php"> <button class="buy">View products</button></a>
       </div>
-    </div>
-    <div class="copyright">
-      <div>
-        <a href="infolettre.php">S'inscrire a l'infolettre</a>
-        <p>Copyright © Rich Ricasso</p>
+      <div class="end-red">
+        <p style="color: white">$299</p>
+        <a class="view-product" href="product.php?id=8">View product</a>
+      </div>
+      <div class="who-am-i">
+        <h2>Who I am ?</h2>
+      </div>
+      <div class="who-container">
+        <div class="left-who-container">
+          <h3>Rich Ricasso</h3>
+          <p class="ricasso-bio" id="ricasso-bio">
+            Rich Ricasso, a luminary in the world of tie design, has left an
+            indelible mark on the fashion industry. With a career spanning
+            decades, he has consistently pushed the boundaries of creativity and
+            elegance in the realm of neckwear.
+          </p>
+        </div>
+        <img class="photo-ricasso" src="img/ricassoPicture.png" alt="image de ricasso" />
+      </div>
+      <div class="most-popular">
+        <h2>Most popular</h2>
+      </div>
+      <div class="wrapper">
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div class="carousel">
+          <?php
+          $allProducts = $db->getControllerProduct()->getAllProducts();
+          shuffle($allProducts);
+          $allProducts = array_slice($allProducts, 0, 4);
+
+          foreach ($allProducts as $product) {
+            ?>
+            <a href="product.php?id=<?php echo $product['id']; ?>">
+              <img src="../<?php echo $product['image']; ?>" alt="product" draggable="false" />
+            </a>
+            <?php
+          }
+          ?>
+        </div>
+
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
+      <div class="end-content">
+        <img src="img/suitBleu.jpg" alt="" />
+        <div class="call-action">
+          <p class="text-action">
+            Ricasso: Elevate Your Style, One Knot at a Time.
+          </p>
+          <a href="products.php"> <button class="buy">View products</button></a>
+        </div>
+      </div>
+      <div class="copyright">
+        <div>
+          <a href="infolettre.php">S'inscrire a l'infolettre</a>
+          <p>Copyright © Rich Ricasso</p>
+        </div>
       </div>
     </div>
   </div>
@@ -170,3 +174,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 </html>
+
+<script>
+  Vue.component('sidebar', {
+    template: `
+      <div>
+        <!-- Your sidebar code goes here -->
+      </div>
+    `
+  });
+
+  new Vue({
+    el: '#app'
+  });
+</script>
