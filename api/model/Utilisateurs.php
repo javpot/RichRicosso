@@ -1,5 +1,4 @@
 <?php
-echo "3";
 class UtilisateursModel
 {
     private $pdo;

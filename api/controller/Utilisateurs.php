@@ -1,6 +1,5 @@
 <?php
-echo "2";
-require_once './model/Utilisateurs.php';
+require_once 'C:\xampp\htdocs/RichRicosso/api/model/Utilisateurs.php';
 class UtilisateursController
 {
     private $model;
@@ -10,11 +9,11 @@ class UtilisateursController
     }
     public function getAllUsers()
     {
-        return json_encode($this->model->getAllUsers());
+        return $this->model->getAllUsers();
     }
     public function getUserByEmail($email)
     {
-        return json_encode($this->model->getUserByEmail($email));
+        return $this->model->getUserByEmail($email);
     }
     public function createUser($fullname, $email, $password)
     {
@@ -25,12 +24,12 @@ class UtilisateursController
                 $password,
                 PASSWORD_DEFAULT
             );
-            return json_encode($this->model->createUser($fullname, $email, $password));
+            return $this->model->createUser($fullname, $email, $password);
         }
     }
     public function createUserNewsletter($email)
     {
-        return json_encode($this->model->createUserNewsletter($email));
+        return $this->model->createUserNewsletter($email);
     }
     public function updateUser($data)
     {
@@ -38,10 +37,10 @@ class UtilisateursController
             $data["password"],
             PASSWORD_DEFAULT
         );
-        return json_encode($this->model->updateUser($data));
+        return $this->model->updateUser($data);
     }
     public function deleteUser($email)
     {
-        return json_encode($this->model->deleteUser($email));
+        return $this->model->deleteUser($email);
     }
 }

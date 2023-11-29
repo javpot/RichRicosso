@@ -1,6 +1,6 @@
 <?php
-echo "4";
 require_once('C:\xampp\htdocs/RichRicosso/api/controller/Utilisateurs.php');
+require_once('C:\xampp\htdocs/RichRicosso/api/controller/Produits.php');
 class DBManager
 {
     private static $instance = null;

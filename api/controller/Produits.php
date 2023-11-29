@@ -1,6 +1,5 @@
 <?php
-echo 5;
-require_once '../model/Produits.php';
+require_once('C:\xampp\htdocs/RichRicosso/api/model/Produits.php');
 class ProduitsController
 {
     private $model;
