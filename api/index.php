@@ -42,7 +42,7 @@ switch (true) {
         if (empty($email)) {
             echo json_encode([
                 "success" => false,
-                "message" => "Veuillez fournir l'e-mail de l'utilisateur en tant que paramètre"
+                "message" => "Veuillez fournir l'e-mail de l'utilisateur en tant que parametre"
             ]);
         } else {
             $user = $controller->getUserByEmail($email);
@@ -68,19 +68,19 @@ switch (true) {
         if (empty($fullname) || empty($email) || empty($password)) {
             echo json_encode([
                 "success" => false,
-                "message" => "Veuillez fournir tous les paramètres nécessaires (fullname, email, password)"
+                "message" => "Veuillez fournir tous les parametres necessaires (fullname, email, password)"
             ]);
         } else {
             $result = $controller->createUser($fullname, $email, $password);
             if ($result) {
                 echo json_encode([
                     "success" => true,
-                    "message" => "Utilisateur créé avec succès"
+                    "message" => "Utilisateur cree avec succes"
                 ]);
             } else {
                 echo json_encode([
                     "success" => false,
-                    "message" => "Échec de la création de l'utilisateur"
+                    "message" => "echec de la creation de l'utilisateur"
                 ]);
             }
         }
@@ -104,12 +104,12 @@ switch (true) {
             if ($result) {
                 echo json_encode([
                     "success" => true,
-                    "message" => "Utilisateur supprimé avec succès"
+                    "message" => "Utilisateur supprime avec succes"
                 ]);
             } else {
                 echo json_encode([
                     "success" => false,
-                    "message" => "Échec de la suppression de l'utilisateur"
+                    "message" => "echec de la suppression de l'utilisateur"
                 ]);
             }
         } else {
@@ -141,7 +141,7 @@ switch (true) {
         if (empty($id)) {
             echo json_encode([
                 "success" => false,
-                "message" => "Veuillez fournir l'identifiant du produit en tant que paramètre"
+                "message" => "Veuillez fournir l'identifiant du produit en tant que parametre"
             ]);
         } else {
             $product = $produitsController->getProductById($id);
