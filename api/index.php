@@ -128,6 +128,22 @@ switch (true) {
             ]);
         }
         break;
+    case ($method == 'POST' && preg_match('/^\/api\/utilisateurs\/update/', $uri)):
+        $data = json_decode(file_get_contents("php://input"), true);
+        $result = $controller->updateUser($data);
+
+        if ($result) {
+            echo json_encode([
+                "success" => true,
+                "message" => "Utilisateur mis à jour avec succès"
+            ]);
+        } else {
+            echo json_encode([
+                "success" => false,
+                "message" => "Échec de la mise à jour de l'utilisateur"
+            ]);
+        }
+        break;
 
     case ($method == 'GET' && $uri == '/api/produits'):
         $products = $produitsController->getAllProducts();
