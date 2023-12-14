@@ -99,6 +99,3 @@ carousel.addEventListener("touchend", dragStop);
 
 menu.addEventListener("click", showSidebar);
 x.addEventListener("click", hideSidebar);
-about.addEventListener("click", hideSidebar);
-shop.addEventListener("click", hideSidebar);
-log.addEventListener("click", hideSidebar);

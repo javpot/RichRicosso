@@ -9,13 +9,13 @@ class ProduitsModel
     public function getAllProducts()
     {
         $stmt = $this->pdo->query("SELECT * FROM clothes");
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function getProductById($id)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM clothes WHERE id = ?");
         $stmt->execute([$id]);
-        return $stmt->fetch();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
     public function getPriceProduct($id)
@@ -43,21 +43,21 @@ class ProduitsModel
     {
         $stmt = $this->pdo->prepare("SELECT * FROM clothes WHERE couleur LIKE ?");
         $stmt->execute([$color]);
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getAllProductsByType($type)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM clothes WHERE type LIKE ?");
         $stmt->execute([$type]);
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getAllProductsBySize($size)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM clothes WHERE size = ?");
         $stmt->execute([$size]);
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getFilteredProducts($type, $couleur, $taille, $prixRange)
@@ -110,6 +110,6 @@ class ProduitsModel
 
         $stmt->execute();
 
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

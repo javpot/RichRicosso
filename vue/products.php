@@ -1,7 +1,7 @@
 <?php
-require_once("../manager/SessionManager.php");
-require_once("../manager/DatabaseManager.php");
-require_once("../controller/Utilisateurs.php");
+require_once("C:/xampp\htdocs/RichRicosso/manager/SessionManager.php");
+require_once("C:/xampp\htdocs/RichRicosso/manager/DatabaseManager.php");
+require_once("C:/xampp\htdocs/RichRicosso/api/controller/Utilisateurs.php");
 
 $session = SessionManager::getInstance();
 $db = DBManager::getInstance();
@@ -28,13 +28,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['filters'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Products</title>
   <link rel="stylesheet" href="products.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
 <body>
-  <?php
-  require('sidebar.php');
-  echo $message;
-  ?>
+  <div id="app">
+    <h2>{{ title }}</h2>
+  </div>
+  <script src="sidebar.js"></script>
   <div class="content-container">
     <div class="filtre-container" id="filtre-container">
       <div class="head-filtre">

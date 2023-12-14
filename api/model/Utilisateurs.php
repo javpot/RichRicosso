@@ -9,14 +9,14 @@ class UtilisateursModel
     public function getAllUsers()
     {
         $stmt = $this->pdo->query("SELECT * FROM users");
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getUserByEmail($email)
     {
         $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->execute([$email]);
-        return $stmt->fetch();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     public function createUser($fullname, $email, $password)
     {

@@ -3,6 +3,9 @@ require_once 'C:\xampp\htdocs/RichRicosso/api/controller/Utilisateurs.php';
 require_once 'C:\xampp\htdocs/RichRicosso/api/controller/Produits.php';
 require_once 'C:\xampp\htdocs/RichRicosso/manager/DatabaseManager.php';
 header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Origin, Content-Type, X-Auth-Token');
 session_start();
 
 function isAuthenticated()
@@ -21,11 +24,34 @@ $tmp = explode('/', $uri);
 $uri = "/" . implode('/', array_splice($tmp, 2));
 
 switch (true) {
-    // Cases for UtilisateursController methods
     case ($method == 'GET' && $uri == '/api/utilisateurs'):
         $users = $controller->getAllUsers();
         echo json_encode($users);
         break;
+
+    case ($method == 'POST' && $uri == '/api/utilisateurs/login'):
+        $data = json_decode(file_get_contents("php://input"), true);
+        $email = $data['email'] ?? null;
+        $password = $data['password'] ?? null;
+
+        $user = $controller->getUserByEmail($email);
+        if ($user) {
+            if (password_verify($password, $user['passwordUser'])) {
+                echo json_encode($user);
+                break;
+            }
+            echo json_encode([
+                "success" => false,
+                "message" => "Mauvais mot de passe"
+            ]);
+            break;
+        }
+        echo json_encode([
+            "success" => false,
+            "message" => "Email non existant"
+        ]);
+        break;
+
     case ($method == 'GET' && preg_match('/^\/api\/utilisateurs\/get/', $uri)):
         $params = explode('&', parse_url($uri, PHP_URL_QUERY));
         $data = [];
@@ -50,17 +76,8 @@ switch (true) {
         }
         break;
 
-    case ($method == 'GET' && preg_match('/^\/api\/utilisateurs\/create/', $uri)):
-        $params = explode('&', parse_url($uri, PHP_URL_QUERY));
-        $data = [];
-
-        foreach ($params as $param) {
-            if (strpos($param, '=') !== false) {
-                list($key, $value) = explode('=', $param);
-                $data[urldecode($key)] = urldecode($value);
-            }
-        }
-
+    case ($method == 'POST' && $uri == '/api/utilisateurs/create'):
+        $data = json_decode(file_get_contents("php://input"), true);
         $fullname = $data['fullname'] ?? null;
         $email = $data['email'] ?? null;
         $password = $data['password'] ?? null;
@@ -68,34 +85,26 @@ switch (true) {
         if (empty($fullname) || empty($email) || empty($password)) {
             echo json_encode([
                 "success" => false,
-                "message" => "Veuillez fournir tous les parametres necessaires (fullname, email, password)"
+                "message" => "Veuillez fournir tous les paramètres nécessaires (fullname, email, password)"
             ]);
         } else {
             $result = $controller->createUser($fullname, $email, $password);
             if ($result) {
                 echo json_encode([
                     "success" => true,
-                    "message" => "Utilisateur cree avec succes"
+                    "message" => "Utilisateur créé avec succès"
                 ]);
             } else {
                 echo json_encode([
                     "success" => false,
-                    "message" => "echec de la creation de l'utilisateur"
+                    "message" => "Échec de la création de l'utilisateur"
                 ]);
             }
         }
         break;
 
-    case ($method == 'GET' && preg_match('/^\/api\/utilisateurs\/delete/', $uri)):
-        $params = explode('&', parse_url($uri, PHP_URL_QUERY));
-        $data = [];
-
-        foreach ($params as $param) {
-            if (strpos($param, '=') !== false) {
-                list($key, $value) = explode('=', $param);
-                $data[urldecode($key)] = urldecode($value);
-            }
-        }
+    case ($method == 'POST' && preg_match('/^\/api\/utilisateurs\/delete/', $uri)):
+        $data = json_decode(file_get_contents("php://input"), true);
 
         $email = $data['email'] ?? null;
 
@@ -120,21 +129,12 @@ switch (true) {
         }
         break;
 
-    // Cases for ProduitsController methods
     case ($method == 'GET' && $uri == '/api/produits'):
         $products = $produitsController->getAllProducts();
         echo json_encode($products);
         break;
-    case ($method == 'GET' && preg_match('/^\/api\/produits\/getById/', $uri)):
-        $params = explode('&', parse_url($uri, PHP_URL_QUERY));
-        $data = [];
-
-        foreach ($params as $param) {
-            if (strpos($param, '=') !== false) {
-                list($key, $value) = explode('=', $param);
-                $data[urldecode($key)] = urldecode($value);
-            }
-        }
+    case ($method == 'POST' && preg_match('/^\/api\/produits\/getById/', $uri)):
+        $data = json_decode(file_get_contents("php://input"), true);
 
         $id = $data['id'] ?? null;
 
