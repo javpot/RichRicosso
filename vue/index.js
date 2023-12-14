@@ -1,12 +1,6 @@
 const carousel = document.querySelector(".carousel"),
     firstImg = carousel.querySelectorAll("img")[0],
     arrowIcons = document.querySelectorAll(".wrapper i");
-menu = document.getElementById("menu");
-sidebar = document.getElementById("sidebar");
-x = document.getElementById("x");
-about = document.getElementById("about");
-shop = document.getElementById("shop");
-log = document.getElementById("log");
 
 let isDragStart = false,
     isDragging = false,
@@ -76,26 +70,5 @@ const dragStop = () => {
     autoSlide();
 };
 
-const showSidebar = () => {
-    sidebar.style.visibility = "visible";
-    const contentContainer = document.querySelector(".content-container");
-    contentContainer.classList.add("blur-background");
-};
-
-const hideSidebar = () => {
-    sidebar.style.visibility = "hidden";
-    const contentContainer = document.querySelector(".content-container");
-    contentContainer.classList.remove("blur-background");
-};
-
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("touchstart", dragStart);
-
-document.addEventListener("mousemove", dragging);
-carousel.addEventListener("touchmove", dragging);
-
-document.addEventListener("mouseup", dragStop);
-carousel.addEventListener("touchend", dragStop);
-
-menu.addEventListener("click", showSidebar);
-x.addEventListener("click", hideSidebar);
