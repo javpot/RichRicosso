@@ -2,6 +2,8 @@
 require_once 'C:\xampp\htdocs/RichRicosso/api/controller/Utilisateurs.php';
 require_once 'C:\xampp\htdocs/RichRicosso/api/controller/Produits.php';
 require_once 'C:\xampp\htdocs/RichRicosso/manager/DatabaseManager.php';
+require_once '../vendor/autoload.php';  // Include Stripe autoload
+
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
@@ -82,7 +84,7 @@ switch (true) {
         $email = $data['email'] ?? null;
         $password = $data['password'] ?? null;
 
-        if (empty($fullname) || empty($email) || empty($password)) {
+        if (empty($email)) {
             echo json_encode([
                 "success" => false,
                 "message" => "Veuillez fournir tous les paramètres nécessaires (fullname, email, password)"
@@ -162,6 +164,51 @@ switch (true) {
         } else {
             $product = $produitsController->getProductById($id);
             echo json_encode($product);
+        }
+        break;
+
+    case ($method == 'POST' && $uri == '/api/payment/checkout'):
+
+        $price = isset($_POST['price']) ? $_POST['price'] : "200";
+        $price_in_cents = (int) round(floatval($price) * 100); // Convert to cents
+        $name = isset($_POST['name']) ? $_POST['name'] : "Default Product Name";
+
+        $stripeKey = "sk_test_51ONLMrCSaJtvvE1CqAiq7RO86H7DPSQlCZlAbuiBo2MckN7PS83mYlH8Lwn1C8gN1ahbsEpg2DNTb97AMP4xL2t100TEpUgGAS";
+
+        \Stripe\Stripe::setApiKey($stripeKey);
+
+        $line_items = [
+            [
+                'price_data' => [
+                    'currency' => 'cad',
+                    'product_data' => [
+                        'name' => $name . "'s Cart",
+                        'description' => 'We cannot guarantee the safety, integrity and well-being of your order. Continue at your own risk',
+                        'images' => ["https://i.postimg.cc/CMRp309s/7467bd695b1349d8abdcd70fd878b0a7.png"],
+                    ],
+                    'unit_amount' => $price_in_cents . "",
+                ],
+                'quantity' => 1,
+            ]
+        ];
+
+        try {
+            $checkout_session = \Stripe\Checkout\Session::create([
+                "mode" => "payment",
+                "success_url" => "http://localhost:8080/home",
+                "line_items" => $line_items,
+            ]);
+
+            echo json_encode([
+                'name' => $name,
+                'price_data' => $price,
+                'checkout_session_id' => $checkout_session->id,
+                'checkout_url' => $checkout_session->url,
+            ]);
+
+            error_log("Checkout Session created successfully: " . json_encode($checkout_session));
+        } catch (\Stripe\Exception\ApiErrorException $e) {
+            echo json_encode(["success" => false, "message" => "Error creating Checkout Session" . $e]);
         }
         break;
 
